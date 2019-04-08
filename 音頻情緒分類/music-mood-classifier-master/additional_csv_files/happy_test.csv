@@ -1,0 +1,111 @@
+id,a_name,title,tempo,energy,danceability,loudness,valence,acousticness
+1,Counting Crows,Accidentally In Love,137.939,0.923,0.554,-3.548,0.808,0.0511
+2,Lionel Richie,All Night Long (All Night),108.837,0.576,0.736,-12,0.755,0.149
+3,Dune,Are You Ready To Fly ,164,0.758,0.51,-10.303,0.155,0.0867
+4,Dead Disco,Automatic ,144.978,0.835,0.453,-6.348,0.429,0.000938
+5,Blue,Back Some Day,165.026,0.724,0.511,-4.856,0.438,0.113
+6,The Boy Least Likely To,Be Gentle With Me,108.11,0.838,0.729,-5.729,0.687,0.0194
+7,Mary J. Blige,Be Happy,92.918,0.715,0.674,-8.525,0.669,0.148
+8,Blur,Beetlebum,89.571,0.648,0.487,-5.14,0.703,0.0351
+9,Elvis Costello,Beyond Belief,184.312,0.728,0.291,-9.218,0.685,0.0614
+10,MIKA,Big Girl (You Are Beautiful),115.99,0.782,0.802,-6.206,0.831,0.0425
+11,Kelis,Bossy,84.009,0.624,0.906,-5.556,0.775,0.000185
+12,Amos Lee,Bottom Of the Barrel,178.13,0.346,0.611,-12.689,0.539,0.784
+13,Bright Eyes,Bowl Of Oranges,105.797,0.584,0.332,-11.369,0.0963,0.329
+14,Tindersticks,Buried Bones,117.681,0.409,0.537,-12.891,0.489,0.544
+15,Robbie Nevil,C'est La Vie,102.108,0.798,0.729,-12.868,0.565,0.533
+16,The Bees,Chicken Payback,142.025,0.968,0.534,-3.093,0.943,0.0906
+17,David Bowie,Chilly Down,145.368,0.848,0.684,-7.387,0.663,0.0421
+18,Coldplay,Clocks,130.969,0.749,0.577,-7.215,0.261,0.599
+19,The Fratellis,Creepin Up The Backstairs,122.375,0.963,0.59,-3.911,0.294,0.000265
+20,Jump5,Do Ya,104.045,0.923,0.547,-3.085,0.693,0.0243
+21,Bobby McFerrin,Don't Worry Be Happy,68.837,0.166,0.675,-22.602,0.747,0.88
+22,The Juliana Theory,Duane Joseph,165.89,0.6,0.42,-8.166,0.381,0.00214
+23,Julian Cope,East Easy Rider,92.367,0.84,0.686,-9.392,0.852,0.112
+24,30 Seconds To Mars,Edge Of The Earth,110.088,0.921,0.522,-4.717,0.241,0.000105
+25,Scooter,Endless Summer,162.016,0.993,0.454,-4.424,0.151,0.00267
+26,eleventyseven,Evil Genius,140,0.866,0.516,-4.271,0.664,0.00608
+27,Dune,Expedicion,169.032,0.751,0.507,-13.438,0.0351,0.00478
+28,Scooter,Fasterharderscooter,145.01,0.93,0.531,-8.181,0.247,6.58E-05
+29,Blue,Fly By,95.237,0.766,0.761,-4.12,0.77,0.16
+30,Scooter,Friends,176.054,0.896,0.402,-7.874,0.232,0.000192
+31,Freelance Whales,Generator ^ Second Floor,139.002,0.67,0.621,-6.358,0.478,0.0172
+32,Dragonette,Get Lucky,150.027,0.28,0.673,-19.798,0.807,0.372
+33,Cut Copy,Going Nowhere,124.868,0.876,0.614,-6.474,0.414,0.108
+34,Greg Street,Good Day,94.003,0.678,0.896,-4.189,0.865,0.574
+35,MIKA,Grace Kelly,122.287,0.847,0.678,-5.825,0.601,0.0219
+36,Sondre Lerche,Happy Birthday Girl,88.969,0.678,0.27,-4.292,0.0937,0.0189
+37,MIKA,Happy Ending,96.032,0.453,0.553,-8.164,0.396,0.554
+38,Otis Redding,The Happy Song,99.787,0.394,0.733,-9.867,0.792,0.249
+39,Dune,Hardcore Vibes,163.883,0.631,0.578,-11.93,0.484,0.0156
+40,Amy Grant,Hats,138.856,0.8,0.699,-4.153,0.834,0.0265
+41,Lisa Stansfield,He Touches Me,102.957,0.626,0.658,-7.308,0.53,0.501
+42,Bryan Adams,Here I Am(Spirit: Stallion Of,98.989,0.772,0.587,-7.118,0.165,0.0104
+43,Owl City,Hot Air Balloon,99.992,0.809,0.622,-5.806,0.73,0.145
+44,The Boy Least Likely To,Hugging My Grudge,105.034,0.652,0.606,-7.757,0.776,0.0099
+45,Axwell ,I Found U ,129.978,0.962,0.669,-6.972,0.227,0.0683
+46,The Go Betweens,I Just Get Caught Out ,154.394,0.759,0.321,-9.712,0.443,0.421
+47,Jeremy Camp,I Surrender To You,76.031,0.764,0.466,-4.753,0.343,0.0163
+48,Ozma,In Search Of 1988,90.201,0.879,0.216,-6.794,0.227,0.000623
+49,Crowded house,In The Lowlands,136.532,0.637,0.437,-12.047,0.586,0.0222
+50,Weezer,Island In The Sun,114.647,0.778,0.646,-6.222,0.782,0.0108
+51,Amy Grant,Keep It On Going,132.265,0.503,0.768,-7.663,0.986,0.16
+52,Gin Blossoms,Keli Richards,146.726,0.938,0.448,-4.761,0.685,0.000929
+53,Weezer,Knockdown Dragout,138.653,0.927,0.389,-4.166,0.445,0.0001
+54,The Go! Team,LadyFlash,115.406,0.959,0.562,-5.288,0.711,0.000278
+55,Scooter,Let Me Be Your Valentine,169.937,0.991,0.431,-4.489,0.219,0.000277
+56,MIKA,Lollipop,95.994,0.596,0.712,-5.31,0.879,0.0302
+57,Blue,Long Time,141.175,0.666,0.595,-3.903,0.389,0.0761
+58,Dune,Lost In Space,170.604,0.555,0.592,-11.649,0.215,0.0944
+59,MIKA,Love Today,124.473,0.908,0.671,-4.855,0.631,0.0252
+60,The Cat Empire,Lullaby,105.897,0.7,0.621,-8.196,0.558,0.0477
+61,David Bowie,Magic Dance,105.936,0.839,0.731,-6.185,0.716,0.0202
+62,Blue,Make It Happen,110.019,0.752,0.783,-4.384,0.923,0.107
+63,Drake Bell,Makes Me Happy,159.914,0.842,0.454,-5.68,0.632,0.0108
+64,The Chemical Brothers,Marvo Ging,111.981,0.989,0.536,-4.229,0.225,0.000957
+65,Rancid,Memphis,178.151,0.967,0.445,-2.222,0.513,0.00364
+66,Dune,Million Miles From Home,170.674,0.885,0.5,-10.834,0.0378,0.00832
+67,Kings Of Convenience,Misread,160.748,0.625,0.637,-9.783,0.896,0.734
+68,Sophie Ellis-Bextor,Mixed Up World,114.055,0.851,0.636,-4.372,0.91,0.000457
+69,Scooter,Move Your Ass!,160.921,0.981,0.508,-4.151,0.186,0.00133
+70,The Vandals,My Brain Tells My Body,175.834,0.979,0.301,-2.461,0.764,0.000386
+71,Cab Calloway & His Orchestra,Nobody's Sweetheart,104.635,0.591,0.809,-10.865,0.875,0.926
+72,Siouxsie And The Banshees,O Baby,106.866,0.892,0.531,-7.539,0.694,0.0838
+73,Scooter,One ,143.979,0.998,0.465,-3.526,0.755,0.000197
+74,The Spill Canvas,One Thing Is For Sure,140.003,0.869,0.559,-3.931,0.624,0.00718
+75,Nat King Cole,Orange Colored Sky,128.547,0.24,0.535,-15.198,0.49,0.92
+76,Scooter,Our Happy Hardcore,165.993,0.936,0.466,-8.3,0.308,0.00221
+77,Wiz Khalifa,Pittsburgh Sound,86.456,0.773,0.74,-5.204,0.731,0.104
+78,Andrew Bird,Plasticities,146.838,0.497,0.61,-10.931,0.678,0.463
+79,Dune,Rainbow To The Stars,180.711,0.862,0.425,-11.661,0.039,0.00943
+80,Scooter,Rebel Yell,175.018,0.983,0.482,-5.392,0.519,0.000811
+81,MIKA,"Relax, Take It Easy",121.997,0.658,0.685,-7.315,0.77,0.0639
+82,Little River Band,Reminiscing,94.731,0.465,0.54,-11.259,0.341,0.652
+83,MIKA,Ring Ring,129.362,0.681,0.558,-7.028,0.292,0.00657
+84,Darren Styles,Save Me,150.103,0.643,0.431,-2.857,0.359,0.178
+85,Sugarcult,Saying Goodbye,111.034,0.939,0.555,-5.854,0.658,0.000443
+86,Snoop Dogg,Signs,112.965,0.701,0.933,-5.603,0.612,0.0374
+87,Weezer,Simple Pages,204.969,0.899,0.199,-4.181,0.426,0.000168
+88,Moloko,Sing It Back (Mousse T's Feel,129.042,0.943,0.798,-4.898,0.759,0.00529
+89,Fountains Of Wayne,Stacy's Mom,118.015,0.75,0.774,-4.927,0.925,0.0021
+90,David Crowder Band,Stars,120.042,0.326,0.59,-9.533,0.194,0.701
+91,Owl City,Strawberry Avalanche,117.002,0.838,0.578,-6.085,0.392,0.0133
+92,KT Tunstall,Suddenly I See,100.455,0.764,0.582,-5.719,0.653,0.233
+93,Scissor Sisters,Take Your Mama,153.96,0.954,0.762,-4.542,0.933,0.22
+94,Elvis Costello,Temptation,145.608,0.526,0.6,-8.148,0.883,0.0216
+95,Acid House Kings,That's Because You Drive Me,89.659,0.508,0.445,-10.585,0.559,0.45
+96,The Boy Least Likely To,The Battle Of The Boy Least Likely to,172.07,0.188,0.369,-17.02,0.146,0.411
+97,Elvis Costello,The Imposter,185.211,0.906,0.482,-6.648,0.963,0.000139
+98,Alisha's Attic,The Incidentals,82.625,0.555,0.521,-7.358,0.653,0.217
+99,The Pogues ,The Irish Rover,140.587,0.95,0.568,-5.405,0.966,0.502
+100,The New Pornographers,The Laws Have Changed,141.948,0.919,0.532,-3.139,0.688,0.00344
+101,30 Seconds To Mars,The Story,176.691,0.671,0.347,-7.293,0.403,0.185
+102,Turin Brakes,Timewaster,136.226,0.934,0.473,-4.298,0.497,0.0181
+103,I'm From Barcelona,Treehouse,145.071,0.786,0.464,-5.669,0.698,0.0132
+104,The Cloud Room,We Sleep In The Ocean,123.765,0.655,0.629,-7.685,0.176,0.511
+105,I'm From Barcelona,We're From Barcelona,119.923,0.93,0.59,-4.259,0.954,0.0984
+106,Bedouin Soundclash,When The Night Feels My Song,109.2,0.523,0.938,-8.582,0.724,0.255
+107,Gloriana,Wild At Heart,97.998,0.859,0.583,-4.009,0.772,0.0183
+108,Gogol Bordello,Wonderlust King,134.963,0.891,0.57,-4.521,0.608,0.0153
+109,Deee-Lite,World Clique,119.907,0.627,0.706,-15.463,0.836,0.014
+110,Jaymay,You Are The Only One I Love,77.429,0.299,0.477,-12.524,0.173,0.904

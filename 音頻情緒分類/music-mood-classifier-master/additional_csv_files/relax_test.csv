@@ -1,0 +1,81 @@
+id,a_name,title,tempo,energy,danceability,loudness,valence,acousticness
+1,Smashing Pumpkins,1979,126.879,0.788,0.765,-9.896,0.964,0.0166
+2,Bob Marley & The Wailers,Africa Unite,127.526,0.435,0.904,-10.043,0.756,0.196
+3,Radiohead,Airbag,167.946,0.872,0.306,-7.313,0.648,0.00792
+4,Radiohead,All I Need,88.005,0.477,0.668,-8.709,0.0966,0.517
+5,Sick Puppies,All The Same,177.592,0.76,0.311,-6.301,0.189,0.000962
+6,Linda Eder,All The Way,96.025,0.125,0.2,-14.866,0.0802,0.944
+7,Above & Beyond,Alone Tonight,137.937,0.53,0.345,-9.978,0.276,0.602
+8,Coldplay,Amsterdam,73.076,0.176,0.262,-10.463,0.105,0.836
+9,Motorcycle,As The Rush Comes (Radio Edit),135.01,0.817,0.614,-7.527,0.644,0.058
+10,Ferry Corsten,Beautiful (Extended),134.998,0.753,0.533,-9.243,0.766,0.000441
+11,Owen,Bed Abuse ,118.026,0.53,0.548,-14.16,0.277,0.0621
+12,Cold,Black Sunday,98.038,0.845,0.229,-5.482,0.199,0.00458
+13,Corinne Bailey Rae,Breathless,175.372,0.483,0.318,-7.981,0.264,0.349
+14,Armin Van Buuren ,Burned With Desire ,137.953,0.916,0.487,-7.986,0.429,0.000638
+15,Norah Jones,Carnival Town,86.102,0.0361,0.594,-16.062,0.186,0.987
+16,Chris Lake ,Changes,126.964,0.936,0.55,-5.101,0.475,0.000403
+17,Air,Cherry Blossom Girl,75.012,0.76,0.436,-7.906,0.504,0.362
+18,Coldplay,Clocks,130.969,0.749,0.577,-7.215,0.261,0.599
+19,ATB,Collides With Beauty,136.988,0.896,0.595,-6.789,0.797,0.0418
+20,Jack Johnson,Constellations,122.025,0.299,0.719,-12.465,0.446,0.47
+21,Blonde Redhead,Doll Is Mine,153.587,0.508,0.524,-8.412,0.362,0.0336
+22,Madeleine Peyroux,Don't Cry Baby,105.603,0.337,0.635,-10.088,0.258,0.89
+23,Coldplay,Don't Panic,122.062,0.612,0.602,-8.409,0.453,0.206
+24,Secret Garden,Dreamcatcher,73.517,0.158,0.185,-19.246,0.0713,0.923
+25,Sinead O'Connor,Drink Before The War,123.936,0.265,0.508,-12.254,0.0973,0.537
+26,Armin Van Buuren ,Empty State,135.994,0.824,0.515,-11.786,0.235,3.69E-05
+27,ATB,Feel Alive (Alternative Radio,132.028,0.85,0.504,-6.028,0.543,0.00493
+28,Joe Cocker,Feelin' Alright,90.095,0.836,0.538,-10.031,0.874,0.674
+29,Owen,Gazebo,127.901,0.424,0.57,-11.918,0.343,0.143
+30,Sinead O'Connor,Gloomy Sunday,124.25,0.156,0.294,-17.397,0.092,0.896
+31,Goldfrapp,Hairy Trees,104.195,0.487,0.52,-11.72,0.0831,0.362
+32,Plain White Ts,Hey There Delilah,104.063,0.293,0.651,-10.575,0.313,0.886
+33,The Chemical Brothers,Hold Tight London,132.975,0.761,0.705,-6.85,0.826,0.194
+34,The Go! Team,Hold Yr Terror Close,124.854,0.393,0.308,-10.841,0.764,0.924
+35,Gorillaz,Hong Kong,148.128,0.582,0.513,-7.394,0.241,0.712
+36,Akon,I Wanna Love You,99.98,0.46,0.866,-9.252,0.29,0.0442
+37,Luka Bloom,I'll Walk Beside You,111.66,0.114,0.326,-16.176,0.319,0.931
+38,JS,Ice Cream,123.004,0.62,0.804,-6.35,0.661,0.208
+39,Coldplay,In My Place,144.642,0.587,0.425,-5.453,0.194,0.0565
+40,The Exies,Inertia,110.415,0.763,0.498,-5.379,0.335,0.104
+41,Jimmy Eat World,Just Watch The Fireworks,120.327,0.69,0.657,-8.154,0.196,0.00335
+42,Corinne Bailey Rae,Like A Star,122.713,0.226,0.605,-10.617,0.142,0.715
+43,Embrace,Looking As You Are,145.689,0.41,0.295,-9.037,0.252,0.22
+44,Seabear,Lost Watch,163.078,0.234,0.271,-11.641,0.12,0.888
+45,Roger Sanchez,Lost,127.983,0.747,0.707,-7.203,0.566,0.0194
+46,Sinead O'Connor,Love Letters,107.799,0.236,0.305,-11.562,0.241,0.665
+47,Babyshambles,Love You But You're Green,87.12,0.495,0.523,-6.654,0.401,0.366
+48,The Spill Canvas,Lullaby,119.683,0.399,0.561,-6.678,0.236,0.241
+49,Room 5 ,Make Luv ,124.845,0.785,0.869,-9.005,0.743,0.00714
+50,Yeah Yeah Yeahs,Man,188.421,0.975,0.229,-2.575,0.0978,0.0276
+51,DJ Shadow,Mutual Slump,98.018,0.829,0.5,-6.275,0.359,0.596
+52,Jimmy Eat World,My Sundown,96.196,0.433,0.539,-12.246,0.141,0.147
+53,Massive Attack,Name Taken,160.038,0.676,0.496,-11.236,0.0395,0.0928
+54,Cosmic Gate ,Not Enough Time,131.951,0.568,0.624,-9.358,0.277,0.00387
+55,Calexico,Not Even Stevie Nicks,132.174,0.394,0.522,-8.761,0.188,0.881
+56,Room Eleven,One Of These Days,102.911,0.493,0.683,-9.557,0.704,0.428
+57,Matt Bianco,Ordinary Day,79.981,0.511,0.73,-10.709,0.701,0.766
+58,Anberlin,Paperthin Hymn,180.434,0.597,0.298,-12.107,0.536,0.00111
+59,The Last Goodnight,Pictures Of You,207.673,0.816,0.325,-3.714,0.579,0.165
+60,Jimmy Eat World,Polaris,111.009,0.945,0.523,-5.642,0.339,0.000183
+61,Enigma,Return To Innocence,88.026,0.584,0.476,-12.357,0.417,0.119
+62,Erasure,Say What,190.986,0.538,0.599,-12.326,0.877,0.0536
+63,Smashing Pumpkins,"Soma (Live In London, 1994)",130.382,0.404,0.307,-10.379,0.195,0.0656
+64,The Starting Line,Something Left To Give,103.982,0.709,0.444,-5.518,0.351,0.0474
+65,A Balladeer,Swim With Sam,118.998,0.667,0.629,-7.434,0.612,0.0741
+66,Kaiser Chiefs,Team Mate,108.123,0.58,0.559,-8.596,0.206,0.00208
+67,Smog,Teenage Spaceship,141.814,0.0665,0.47,-22.287,0.214,0.608
+68,Everything But The Girl,Temperamental,123.971,0.76,0.764,-9.352,0.938,0.0485
+69,Frankie Goes To Hollywood,The Power of Love,122.913,0.164,0.466,-17.17,0.101,0.364
+70,Norah Jones,Those Sweet Words,103.152,0.234,0.798,-10.699,0.403,0.875
+71,Keane,To The End Of The Earth,119.981,0.689,0.503,-7.01,0.337,0.0123
+72,The Jam,Town Called Malice,101.798,0.917,0.553,-8.806,0.781,0.00265
+73,Massive Attack,Unfinished Sympathy,114.436,0.835,0.592,-8.475,0.703,0.0393
+74,Dash Berlin,Waiting,135.986,0.847,0.519,-6.716,0.169,0.052
+75,Ben Harper,Walk Away,140.427,0.0954,0.712,-15.896,0.393,0.875
+76,Coldplay,We Never Change,136.924,0.286,0.434,-10.803,0.122,0.533
+77,Seventh Day Slumber,When The Children Cry,137.928,0.605,0.536,-6.231,0.156,0.129
+78,Venus In Flames,Whole New Me,122.979,0.137,0.424,-15.58,0.288,0.909
+79,Connie Francis,You're Gonna Miss Me,190.714,0.285,0.326,-9.377,0.455,0.841
+80,Mnemic,Zero Gravity,89.994,0.728,0.387,-10.639,0.112,0.000178

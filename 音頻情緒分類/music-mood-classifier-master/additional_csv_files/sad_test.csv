@@ -1,0 +1,101 @@
+id,a_name,title,tempo,energy,danceability,loudness,valence,acousticness
+1,The Clientele,(I Can't Seem To) Make You Mine,171.2,0.388,0.31,-11.306,0.358,0.391
+2,D'Angelo,Africa,84.427,0.333,0.518,-10.31,0.349,0.628
+3,A Fine Frenzy,Almost Lover,119.58,0.24,0.549,-7.778,0.167,0.947
+4,Beck,Already Dead,115.103,0.399,0.658,-10.207,0.339,0.165
+5,Ron Sexsmith,And Now The Day Is Done,93.144,0.157,0.539,-10.952,0.492,0.934
+6,Antony & The Johnsons,Another World,106.697,0.0387,0.32,-20.616,0.229,0.971
+7,The Cure,Apart,82.102,0.433,0.546,-15.933,0.511,0.422
+8,Papa Roach,Binge,93.601,0.925,0.469,-4.191,0.373,4.93E-06
+9,Roxy Music,Bitter Sweet,117.792,0.425,0.51,-9.219,0.13,0.255
+10,Rascal Flatts,Bless The Broken Road,135.948,0.433,0.599,-6.336,0.384,0.693
+11,Ryan Adams,Blue Sky Blues,111.844,0.0226,0.364,-19.517,0.0915,0.978
+12,Sleeping At Last,Brightly,132.609,0.481,0.316,-6.798,0.0599,0.395
+13,Joe Cocker,Bye Bye Blackbird,123.81,0.392,0.506,-12.784,0.268,0.713
+14,Kimya Dawson,Caving In,141.963,0.406,0.517,-12.801,0.692,0.744
+15,Nick Drake,Clothes Of Sand,118.844,0.177,0.466,-19.918,0.426,0.901
+16,Cat Power,Colors And The Kids,116.892,0.0849,0.425,-14.838,0.157,0.935
+17,iLiKETRAiNS,Death Is The End,116.36,0.244,0.313,-13.721,0.0387,0.868
+18,TRUSTcompany,Deeper Into You,102.989,0.949,0.511,-3.328,0.374,0.000298
+19,Nirvana,Dumb,113.623,0.394,0.695,-13.585,0.845,0.425
+20,Eels,Elizabeth on the Bathroom Floor,133.659,0.0895,0.398,-21.668,0.0942,0.951
+21,Lighthouse Family,End Of The Sky,99.997,0.705,0.579,-8.865,0.322,0.0352
+22,The Cranberries,Fee Fi Fo,140.163,0.744,0.528,-6.504,0.509,0.119
+23,The Music,Fight The Feeling,117.084,0.575,0.449,-5.626,0.283,0.00437
+24,James,Five-O,124.955,0.54,0.592,-12.731,0.182,0.00371
+25,Donavon Frankenreiter,Fool,88.381,0.406,0.754,-10.365,0.375,0.0559
+26,Neva Dinova ,Get Back,119.744,0.402,0.434,-10.116,0.218,0.454
+27,BBMak,Ghost Of You And Me,100.059,0.588,0.597,-6.882,0.42,0.574
+28,Donavon Frankenreiter,Girl Like You,112.504,0.705,0.595,-6.972,0.653,0.107
+29,Maroon 5,Goodnight Goodnight,94.999,0.684,0.582,-3.721,0.224,0.0348
+30,PJ Harvey,Horses In My Dreams,116.714,0.128,0.586,-14.569,0.0399,0.918
+31,Kenny Rogers,I Can't Unlove You,139.824,0.426,0.542,-7.044,0.453,0.0812
+32,Antony ,I Was Young When I Left Home,85.907,0.176,0.436,-15.475,0.487,0.964
+33,Josh Groban,I'll Be Home For Christmas,165.449,0.291,0.228,-13.57,0.167,0.936
+34,Bucky Covington,I'll Walk,77.004,0.386,0.509,-7.387,0.32,0.828
+35,JS,Ice Cream,123.004,0.62,0.804,-6.35,0.661,0.208
+36,Guillemots,If The World Ends,99.047,0.294,0.173,-14.981,0.0932,0.727
+37,Ghostface Killah,Josephine,95.824,0.67,0.821,-5.172,0.552,0.172
+38,Dana Winner,Just When I Needed You Most,168.533,0.229,0.322,-13.701,0.119,0.776
+39,Feist,Let It Die,115.89,0.208,0.434,-13.354,0.0613,0.659
+40,Tindersticks,Let's Pretend,117.221,0.474,0.545,-9.977,0.219,0.00184
+41,Beck,Lost Cause,119.88,0.58,0.62,-8.569,0.221,0.253
+42,Joe Cocker,Many Rivers To Cross,125.367,0.255,0.627,-14.136,0.364,0.507
+43,Diary of Dreams,Mask of Shame,100.005,0.247,0.642,-14.026,0.0967,0.681
+44,Cat Power,Maybe Not,107.32,0.143,0.478,-13.82,0.16,0.987
+45,Kristin Hersh,Me And My Charms,136.333,0.473,0.536,-10.465,0.484,0.752
+46,Brand New,Me vs. Maradona vs. Elvis,181.75,0.251,0.484,-10.446,0.334,0.2
+47,R.E.M.,Moon River,99.983,0.257,0.319,-11.931,0.176,0.882
+48,Extreme,More Than Words,91.769,0.129,0.615,-14.892,0.249,0.468
+49,Nikola Sarcevic,MY AIM IS YOU,123.678,0.409,0.54,-9.484,0.39,0.589
+50,Cat Power,Names,166.848,0.0828,0.336,-15.212,0.0924,0.96
+51,Terra Naomi,New Song,75.337,0.601,0.55,-5.999,0.273,0.0402
+52,Air,New Star In The Sky,129.819,0.338,0.431,-13.174,0.108,0.561
+53,Corinne Bailey Rae,No Love Child,100.876,0.155,0.472,-12.775,0.0534,0.877
+54,Tindersticks,No Man In The World,115.59,0.0741,0.458,-17.84,0.118,0.86
+55,Duran Duran,Ordinary World,140.124,0.652,0.472,-10.171,0.401,0.0131
+56,Anberlin,Paperthin Hymn,180.434,0.597,0.298,-12.107,0.536,0.00111
+57,El Perro Del Mar,People,117,0.373,0.559,-10.891,0.233,0.909
+58,Air,Photograph,129.942,0.44,0.589,-13.457,0.482,0.431
+59,Air,PLAYGROUND LOVE,142.912,0.422,0.353,-10.538,0.135,0.249
+60,Moby,Porcelain,94.73,0.637,0.297,-7.926,0.332,0.0014
+61,30 Seconds To Mars,R-Evolve,134.987,0.804,0.471,-6.508,0.103,0.00468
+62,Colbie Caillat,Realize,123.95,0.607,0.699,-6.312,0.156,0.142
+63,Noel Gallagher,Sad Song ,124.68,0.733,0.343,-2.576,0.389,0.164
+64,Serj Tankian,Saving Us,159.97,0.84,0.445,-3.975,0.327,0.00117
+65,Ryan Adams & The Cardinals,September,117.124,0.0753,0.378,-17.728,0.237,0.655
+66,Black Eyed Peas,Shut Up,112.977,0.693,0.807,-3.96,0.606,0.0894
+67,The Beach Boys,Sloop John B,125.575,0.745,0.567,-5.423,0.903,0.402
+68,Donavon Frankenreiter,So Far Away,62.96,0.32,0.596,-8.641,0.448,0.208
+69,Nine Inch Nails,Something I Can Never Have,108.051,0.131,0.501,-16.824,0.0391,0.815
+70,The Velvet Underground,Stephanie Says,112.894,0.284,0.556,-14.921,0.238,0.851
+71,Rickie Lee Jones,Stewart's Coat,124.327,0.151,0.516,-16.317,0.196,0.589
+72,Lighthouse Family,Sun In The Night,120.388,0.288,0.568,-13.326,0.173,0.421
+73,Low,Sunshine,109.493,0.0955,0.385,-17.717,0.047,0.77
+74,Archive,Taste Of Blood,87.958,0.062,0.397,-15.431,0.121,0.679
+75,Brand New,The Boy Who Blocked His Own Shot,178.266,0.498,0.415,-8.162,0.278,0.0792
+76,Luke Bryan,The Car In Front Of Me,156.107,0.463,0.457,-6.798,0.138,0.0586
+77,Micah P. Hinson,The Dreams You Left Behind,100.001,0.443,0.713,-8.562,0.505,0.491
+78,Valencia,The Good Life,157.278,0.901,0.258,-3.416,0.201,0.000111
+79,Nine Inch Nails,The Great Below,122.545,0.269,0.3,-16.825,0.0495,0.461
+80,The Beta Band,The Hard One,133.077,0.286,0.36,-15.453,0.14,0.859
+81,Mark Knopfler,The Last Laugh,85.26,0.199,0.527,-10.46,0.479,0.879
+82,Sherwood,The Only Song,149.943,0.358,0.596,-10.272,0.694,0.783
+83,Suzanne Vega,The Queen And The Soldier,147.027,0.209,0.337,-15.196,0.276,0.531
+84,Whitesnake,The Time Is Right For Love,151.252,0.922,0.356,-5.033,0.519,0.000817
+85,Sawyer Brown,The Walk,127.929,0.355,0.689,-11.585,0.457,0.778
+86,Phil Collins,There's A Place For Us,119.671,0.329,0.418,-11.015,0.13,0.556
+87,A Fine Frenzy,Think Of You,122.004,0.528,0.666,-5.867,0.238,0.407
+88,Tindersticks,Tiny Tears,151.153,0.344,0.265,-12.55,0.117,0.131
+89,Metallica,To Live Is To Die,104.279,0.607,0.441,-9.624,0.372,0.00031
+90,No Doubt,Too Late,169.871,0.673,0.35,-5.189,0.268,0.594
+91,Goran Bregovic,TV Screen,99.813,0.452,0.744,-10.567,0.327,0.488
+92,Mazzy Star,Umbilical,79.607,0.271,0.28,-11.378,0.0414,0.045
+93,Ben Harper,Walk Away,140.427,0.0954,0.712,-15.896,0.393,0.875
+94,Coldplay,We Never Change,136.924,0.286,0.434,-10.803,0.122,0.533
+95,Slut,Wednesday,73.979,0.39,0.539,-6.877,0.198,0.68
+96,Radiohead,Weird Fishes/Arpeggi,152.999,0.61,0.538,-8.027,0.199,0.774
+97,The Feeling,When I Return,148.003,0.74,0.459,-5.748,0.44,0.447
+98,Farmer Boys,Where The Sun Never Shines,134.043,0.837,0.472,-4.856,0.18,3.84E-05
+99,Coldplay,Yellow,173.365,0.661,0.429,-7.227,0.285,0.00239
+100,Breaking Benjamin,You,97.083,0.646,0.487,-6.878,0.16,0.202

@@ -1,0 +1,178 @@
+﻿id,title,a_name,tempo,energy,danceability,loudness,valence,acousticness
+1,24K Magic,Bruno Mars,106.97,0.803,-4.282,0.818,0.632,0.034
+2,A Million Dreams,Ziv Zaifman,54.747,0.312,-11.689,0.265,0.0998,0.243
+3,A Thousand Years,Christina Perri,139.028,0.407,-7.445,0.421,0.161,0.309
+4,Affection,Crystal Castles,124.654,0.835,-7.165,0.658,0.532,0.0602
+5,All Day,Kanye West,122.967,0.638,-4.968,0.855,0.412,0.0648
+6,All of the Stars,Ed Sheeran,150.066,0.562,-6.106,0.436,0.24,0.0102
+7,"""All These Things That Ive Done""",The Killers,118.276,0.71,-6.925,0.552,0.206,0.00164
+8,Alone,Alan Walker,97.021,0.914,-3.962,0.673,0.183,0.229
+9,Alright,Kendrick Lamar,110.034,0.766,-5.974,0.796,0.558,0.0742
+10,Amsterdam,Coldplay,73.076,0.176,-10.463,0.262,0.105,0.836
+11,Annie,Neon Indian,95.98,0.848,-6.246,0.739,0.875,0.0227
+12,Attention,Charlie Puth,100.066,0.613,-4.586,0.775,0.797,0.109
+13,Awake,Tycho,176.057,0.878,-5.767,0.552,0.598,0.0585
+14,Bad Things,Machine Gun Kelly,137.853,0.691,-4.757,0.697,0.305,0.214
+15,Bang That,Disclosure,125.008,0.852,-6.08,0.731,0.611,0.00041
+16,Be A Body,Grimes,140.04,0.58,-9.643,0.736,0.137,0.263
+17,Beach House,The Chainsmokers,179.945,0.838,-4.491,0.4,0.533,0.174
+18,Believer,Imagine Dragons,124.949,0.78,-4.374,0.776,0.666,0.0622
+19,Better Now,Post Malone,145.028,0.563,-5.843,0.68,0.374,0.354
+20,Big Rings,Drake,131.984,0.675,-6.224,0.776,0.271,0.00196
+21,Binge,Papa Roach,93.58,0.93,-4.154,0.464,0.334,3.97E-06
+22,Candy Cane Lane,Sia,130.017,0.91,-4.206,0.589,0.394,0.00366
+23,Capitol,TR/ST,105.018,0.918,-5.295,0.457,0.286,0.000313
+24,Castle on the Hill,Ed Sheeran,135.007,0.834,-4.868,0.461,0.471,0.0232
+25,Chained To The Rhythm,Katy Perry,189.89,0.8,-5.404,0.446,0.474,0.0814
+26,Chandelier,Sia,117.089,0.787,-2.88,0.399,0.572,0.0197
+27,Chantaje,Shakira,102.034,0.773,-2.921,0.852,0.907,0.187
+28,Char,Crystal Castles,100.04,0.837,-6.615,0.646,0.326,0.018
+29,Chlorine,Twenty One Pilots,90.009,0.674,-7.388,0.609,0.315,0.0735
+30,Closer,The Chainsmokers,95.01,0.524,-5.599,0.748,0.661,0.414
+31,Cocaine Model,ZHU,120.011,0.706,-6.212,0.786,0.313,0.251
+32,Cold Water,Major Lazer,92.943,0.798,-5.092,0.608,0.501,0.0736
+33,Colors And The Kids,Cat Power,116.892,0.0849,-14.838,0.425,0.157,0.935
+34,Coming Home,Leon Bridges,112.137,0.465,-6.595,0.427,0.458,0.461
+35,Congratulations,Post Malone,123.146,0.804,-4.183,0.63,0.492,0.215
+36,Crosstown Traffic,Jimi Hendrix,113.133,0.963,-5.586,0.486,0.533,0.248
+37,Danger and Dread,Brown Bird,209.686,0.449,-9.271,0.462,0.773,0.674
+38,Dry,PJ Harvey,99.815,0.471,-15.469,0.448,0.471,0.00134
+39,Electioneering,Radiohead,78.84,0.951,-4.345,0.204,0.44,0.00248
+40,Fake Tales Of San Francisco,Arctic Monkeys,127.158,0.778,-4.225,0.454,0.704,0.00998
+41,Fall In Love,Phantogram,188.046,0.856,-3.216,0.348,0.269,0.0416
+42,Felices los 4,Maluma,94.027,0.756,-5.861,0.766,0.716,0.213
+43,Fire,Sara Bareilles,107.032,0.726,-7.921,0.666,0.462,0.485
+44,Flashlight,Parliament,106.077,0.802,-6.159,0.749,0.826,0.0332
+45,Get Away,CHVRCHES,120.03,0.57,-6.645,0.62,0.429,0.00525
+46,Give in To Me,Lika Morgan,124.071,0.871,-4.069,0.769,0.672,0.0873
+47,Glorious,Macklemore,139.994,0.794,-5.126,0.731,0.356,0.0323
+48,Go,Grimes,140.012,0.796,-6.179,0.621,0.279,0.0107
+49,God is a woman,Ariana Grande,145.031,0.658,-5.934,0.602,0.268,0.0233
+50,Good Years,ZAYN,96.969,0.411,-5.979,0.638,0.158,0.55
+51,Havana,Camila Cabello,104.988,0.523,-4.333,0.765,0.394,0.184
+52,High School Lover,Cayucas,123.039,0.988,-4.398,0.702,0.617,0.38
+53,How Did I Get Here,ODESZA,96.064,0.578,-6.205,0.71,0.348,0.371
+54,"""How Far Ill Go""",Alessia Cara,179.484,0.563,-9.671,0.315,0.147,0.173
+55,How Long Will I Love You,Ellie Goulding,126.078,0.304,-9.19,0.512,0.172,0.295
+56,"""I Aint Trippin off Nothin""",Ezale,106.059,0.831,-4.664,0.857,0.259,0.00158
+57,"""I Dont Know What Love Is""",Lady Gaga,62.671,0.535,-6.556,0.421,0.221,0.348
+58,I Feel It Coming,The Weeknd,92.99,0.819,-5.946,0.773,0.585,0.426
+59,I Like The Way,Against The Current,120.014,0.804,-4.323,0.671,0.618,0.0333
+60,I Shall Be Released,Nina Simone,169.867,0.345,-10.654,0.374,0.552,0.376
+61,I Will Always Love You,Whitney Houston,66.98,0.214,-12.518,0.306,0.108,0.844
+62,If The World Ends,Guillemots,143.522,0.278,-14.946,0.167,0.0911,0.716
+63,Ikimiz Bir Fidaniz,Umit Aksu Orkestrasi,82.118,0.715,-11.164,0.549,0.777,0.374
+64,"""Im a Mess""",Bebe Rexha,97.005,0.694,-6.257,0.63,0.216,0.00281
+65,imagine,Ariana Grande,62.52,0.475,-4.985,0.729,0.371,0.378
+66,In the Name of Love,Martin Garrix,133.99,0.519,-5.88,0.501,0.168,0.109
+67,Intro,Alan Walker,128.231,0.222,-11.073,0.399,0.0387,0.864
+68,Junk of the Heart,The Kooks,145.014,0.894,-5,0.604,0.901,0.0212
+69,Killer Queen,5 Seconds of Summer,171.009,0.789,-4.548,0.262,0.487,0.00422
+70,Leave A Trace,CHVRCHES,99.738,0.728,-5.835,0.419,0.208,0.0142
+71,Let It Happen,Tame Impala,125.012,0.881,-5.875,0.602,0.577,0.00462
+72,Let Me Show You Love,Cut Copy,100.005,0.942,-4.336,0.574,0.395,0.0815
+73,Lie for Love,Sabrina Carpenter,126.096,0.818,-6.958,0.695,0.485,0.114
+74,Little People (Black City),Matthew Dear,112.006,0.84,-6.28,0.648,0.568,0.00414
+75,Look at You,George McCrae,106.739,0.913,-9.091,0.717,0.962,0.32
+76,Look Back At It,A Boogie Wit da Hoodie,96.057,0.587,-5.075,0.791,0.536,0.407
+77,Look What I Found,Lady Gaga,97.012,0.493,-4.1,0.849,0.447,0.456
+78,Lose My Mind,A-Trak,110.007,0.684,-6.89,0.649,0.605,0.336
+79,Losing You,Solange,113.997,0.798,-6.175,0.735,0.464,0.0579
+80,Lost In Japan,Shawn Mendes,107.178,0.852,-5.34,0.694,0.377,0.0882
+81,Lost In The Fire,Four of Diamonds,128.625,0.431,-6.633,0.478,0.343,0.638
+82,Magnolia,Young & Sick,139.96,0.446,-8.49,0.59,0.323,0.489
+83,Mama,Jonas Blue,104.014,0.794,-4.118,0.738,0.566,0.101
+84,Mandy,Westlife,105.591,0.597,-6.036,0.43,0.334,0.248
+85,Maneuvering,ILoveMakonnen,130.025,0.773,-4.722,0.763,0.343,0.00705
+86,Milly Rock,2milly,135.45,0.449,-12.037,0.45,0.139,0.00791
+87,Music To My Eyes,Lady Gaga,114.805,0.356,-9.044,0.625,0.325,0.392
+88,Never Enough,Loren Allred,86.777,0.394,-8.903,0.277,0.227,0.423
+89,Never Had A Dream Come True,S Club 7,122.919,0.536,-5.593,0.643,0.471,0.485
+90,New Rules,Dua Lipa,116.073,0.7,-6.021,0.762,0.608,0.00261
+91,No Promises,Cheat Codes,112.956,0.667,-5.445,0.741,0.595,0.0575
+92,No Rest For The Wicked,Lykke Li,97.967,0.445,-7.202,0.312,0.272,0.365
+93,"""Oh My Darling Dont Meow (Just Blaze Remix)""",Run The Jewels,149.97,0.77,-6.954,0.633,0.329,0.284
+94,One Dance,Drake,103.99,0.61,-5.857,0.796,0.391,0.00842
+95,One More Chance,James Collins,132.371,0.139,-10.721,0.39,0.108,0.917
+96,Paris,The Chainsmokers,99.999,0.644,-6.763,0.646,0.251,0.0243
+97,Perfect,Ed Sheeran,95.05,0.448,-6.312,0.599,0.168,0.163
+98,"""Poppin My Collar""",Three 6 Mafia,146.747,0.795,-4.579,0.729,0.856,0.354
+99,Pretty Girl,Maggie Lindemann,121.03,0.868,-4.661,0.703,0.733,0.15
+100,Return Of The Mack - C & J Street Mix,Mark Morrison,95.487,0.833,-5.379,0.715,0.612,0.00631
+101,Ruin My Life,Zara Larsson,124.896,0.699,-5.265,0.665,0.585,0.423
+102,Seasons in the Sun,Westlife,87.973,0.56,-6.221,0.598,0.535,0.195
+103,Sexy Socialite,Chromeo,142.007,0.686,-5.817,0.785,0.965,0.101
+104,Shallow,Lady Gaga,95.799,0.385,-6.362,0.572,0.323,0.371
+105,She,Elvis Costello,130.215,0.284,-12.866,0.332,0.311,0.459
+106,Shotgun,George Ezra,115.741,0.735,-4.733,0.672,0.754,0.286
+107,Side To Side,Ariana Grande,159.174,0.736,-5.84,0.65,0.612,0.0513
+108,Slumlord,Neon Indian,108.003,0.98,-4.914,0.629,0.808,0.228
+109,"""Somebodys Watching Me""",Rockwell,124.091,0.712,-4.128,0.767,0.804,0.0409
+110,Someone You Loved,Lewis Capaldi,109.891,0.405,-5.679,0.501,0.446,0.751
+111,Something Just Like This,The Chainsmokers,103.019,0.635,-6.769,0.617,0.446,0.0498
+112,Something Left To Give,The Starting Line,103.982,0.709,-5.518,0.444,0.351,0.0474
+113,Somewhere Only We Know,Keane,172.004,0.665,-4.203,0.448,0.304,0.06
+114,Starving,Hailee Steinfeld,99.989,0.615,-4.238,0.729,0.508,0.378
+115,Stay,Post Malone,85.913,0.468,-5.396,0.479,0.35,0.414
+116,Stray,Grace VanderWaal,96.933,0.542,-7.204,0.627,0.217,0.648
+117,Strip Me,Natasha Bedingfield,159.902,0.783,-5.41,0.566,0.53,0.241
+118,Suddenly I See,KT Tunstall,100.38,0.767,-5.713,0.587,0.664,0.225
+119,Sugar,Maroon 5,120.076,0.788,-7.055,0.748,0.884,0.0591
+120,Sugar for the Queen,Bells Atlas,170.678,0.688,-8.407,0.388,0.806,0.196
+121,Summer Madness,Kool & The Gang,175.85,0.332,-16.471,0.303,0.41,0.00859
+122,Swerve,ILoveMakonnen,114.047,0.676,-4.502,0.812,0.38,0.0454
+123,Symphony,Clean Bandit,122.863,0.629,-4.581,0.707,0.457,0.259
+124,Talk About,Les Sins,124.998,0.83,-5.766,0.814,0.285,0.0152
+125,"""Thats What I Like""",Bruno Mars,134.066,0.56,-4.961,0.853,0.86,0.013
+126,The Chase,Future Islands,132.475,0.84,-6.227,0.7,0.758,0.0638
+127,The Diary Of Jane,Breaking Benjamin,167.032,0.961,-4.421,0.374,0.357,5.53E-05
+128,The Hills,The Weeknd,112.986,0.565,-7.065,0.58,0.138,0.0671
+129,The Payback,James Brown,92.074,0.917,-4.753,0.563,0.573,0.128
+130,The Righteous One,The Orwells,128.604,0.884,-4.602,0.389,0.422,0.00412
+131,The River,Son Little,109.029,0.753,-6.039,0.694,0.532,0.0441
+132,The Rose,Westlife,109.581,0.203,-9.706,0.272,0.172,0.784
+133,The Show,Lenka,123.028,0.59,-4.144,0.753,0.593,0.259
+134,There You Are,ZAYN,76.986,0.685,-4.828,0.452,0.305,0.0257
+135,"""Theres Nothing Holdin Me Back""",Shawn Mendes,121.998,0.813,-4.063,0.866,0.969,0.38
+136,Thunder,Imagine Dragons,167.997,0.822,-4.833,0.605,0.288,0.00671
+137,Tightrope,Michelle Williams,161.564,0.331,-10.316,0.351,0.191,0.3
+138,Tiny Dancer,Elton John,145.075,0.428,-11.097,0.414,0.282,0.382
+139,Tired,Alan Walker,123.994,0.876,-4.159,0.69,0.493,0.0428
+140,To The Top,Twin Shadow,82.925,0.725,-6.156,0.429,0.159,0.00502
+141,Trust My Lonely,Alessia Cara,150.305,0.662,-6.025,0.583,0.636,0.00541
+142,Tuesday,ILoveMakonnen,140.163,0.664,-5.604,0.77,0.472,0.215
+143,Uncle ACE,Blood Orange,112.977,0.945,-6.445,0.742,0.742,0.0639
+144,Undecided,Chris Brown,96.37,0.527,-5.318,0.441,0.589,0.172
+145,Unforgettable,French Montana,97.985,0.769,-5.043,0.726,0.733,0.0293
+146,Upper Echelon,Travis Scott,122.065,0.617,-4.516,0.788,0.128,0.0448
+147,Versace Python,Riff Raff,139.94,0.792,-5.33,0.624,0.325,0.00156
+148,Voices,Against The Current,105.02,0.851,-4.782,0.715,0.789,0.0036
+149,Wait for the Man,FIDLAR,190.559,0.939,-4.756,0.133,0.219,8.20E-06
+150,Watching You,Melissa Etheridge,130.611,0.283,-15.173,0.343,0.166,0.645
+151,We All Need Saving,The Eight Tracks,138.993,0.38,-8.854,0.25,0.157,0.502
+152,We Sleep In The Ocean,The Cloud Room,123.765,0.655,-7.685,0.629,0.176,0.511
+153,Weight,Mikal Cronin,153.027,0.784,-5.004,0.246,0.176,0.0107
+154,What About Now,Westlife,162.109,0.772,-4.284,0.338,0.334,0.0134
+155,"""What Ive Done""",Linkin Park,120.119,0.93,-5.285,0.623,0.287,0.0141
+156,When I Fall In Love,Celine Dion,68.353,0.241,-13.251,0.19,0.107,0.577
+157,When The Night Falls,Chromeo,121.912,0.92,-4.05,0.713,0.912,0.0471
+158,When They Fight   They Fight,Generationals,119.756,0.898,-2.051,0.755,0.966,0.242
+159,White Girl,Shy Glizzy,129.948,0.793,-5.332,0.698,0.454,0.123
+160,Will You Love Me Tomorrow,The Shirelles,137.047,0.384,-11.315,0.49,0.47,0.438
+161,With You,Mariah Carey,74.677,0.391,-7.594,0.593,0.141,0.253
+162,Wolves,Selena Gomez,124.946,0.807,-4.59,0.72,0.305,0.129
+163,"""Words I Dont Remember""",How To Dress Well,80.004,0.213,-13.437,0.533,0.207,0.849
+164,World In Motion,New Order,123.922,0.955,-4.111,0.603,0.787,0.0239
+165,"""You Dont Know Me""",Jax Jones,123.999,0.658,-6.055,0.877,0.693,0.163
+166,Youngblood,5 Seconds of Summer,120.274,0.854,-5.114,0.596,0.152,0.0169
+167,Your Song,Rita Ora,117.984,0.621,-4.105,0.869,0.962,0.159
+168,"""Youre Not Good Enough""",Blood Orange,119.964,0.798,-6.55,0.74,0.571,0.189
+169,"""Youre the Best""",Wet,100.114,0.331,-11.184,0.435,0.19,0.138
+170,Flying Without Wings,Westlife,72.742,0.493,-7.956,0.443,0.283,0.323
+171,Worth It,YK Osiris,123.936,0.528,-4.082,0.764,0.422,0.468
+172,This Love,Maroon 5,95.034,0.859,-4.634,0.714,0.755,0.0556
+173,Animals,Maroon 5,189.868,0.742,-6.46,0.279,0.328,0.000185
+174,Maps,Maroon 5,120.032,0.713,-5.522,0.742,0.879,0.0205
+175,It Was Always You,Maroon 5,103.951,0.765,-6.582,0.613,0.299,0.082
+176,Closure,Maroon 5,116.962,0.813,-6.687,0.748,0.445,0.183
+177,One More Night,Maroon 5,92.997,0.821,-3.435,0.716,0.618,0.0558
