@@ -29,7 +29,7 @@ for i in range(len(titledata)):
 import  pymysql
 conn  =  pymysql.connect ( host = '127.0.0.1' ,  user = 'root' ,  passwd = "850121" ,  db = 'musicdb' ) 
 cur  =  conn.cursor ()
-sql = "INSERT INTO songlist (song, singer,lyrics,vector) VALUES (%s, %s,%s,%s)" 
+sql = "INSERT INTO songlist (song, singer, lyrics, vector) VALUES (%s, %s,%s,%s)" 
 for i in range(len(singerdata)):
     titlen = titledata2[i]
     aname = singerdata2[i]
