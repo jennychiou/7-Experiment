@@ -31,10 +31,10 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `songlist`;
 CREATE TABLE IF NOT EXISTS `songlist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `song` varchar(200) NOT NULL,
-  `singer` varchar(200) NOT NULL,
-  `lyrics` varchar(500) NOT NULL,
-  `vector` varchar(500) NOT NULL,
+  `song` text NOT NULL,
+  `singer` text NOT NULL,
+  `lyrics` text NOT NULL,
+  `vector` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=551 DEFAULT CHARSET=utf8;
 
