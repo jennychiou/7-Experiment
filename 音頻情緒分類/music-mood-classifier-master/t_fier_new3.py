@@ -16,7 +16,7 @@ import requests
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('lyricsCSV/lyrics0426(1-1071)_d.csv')
+df = pd.read_csv('lyricsCSV/lyrics0503(1-2000)_d.csv')
 df = df[['song','vector','mood']]
 ##df2 = df[pd.notnull(df['vector'])]
 ##print(df2['vector'][0])
