@@ -250,11 +250,11 @@ if token:
         titledata2=[]
         singerdata=[] #歌手
         singerdata2=[]
-        with open('txtFile/combine(2000)0415-song.txt','r') as f:
+        with open('txtFile/songdata11_0426.txt','r') as f:
             for line in f:
                 titledata.append(line.strip('\n').split(','))
 ##        print(result)
-        with open('txtFile/combine(2000)0415-singer.txt','r') as f:
+        with open('txtFile/singerdata11_0426.txt','r') as f:
             for line in f:
                 singerdata.append(line.strip('\n').split(','))
 
@@ -274,7 +274,7 @@ if token:
                        
         # 寫入CSV二維表格
         import csv
-        with open('outputCSV/combine(2000)0415.csv', 'w', newline='') as csvFile:
+        with open('outputCSV/yourOutput_0426.csv', 'w', newline='') as csvFile:
             writer = csv.writer(csvFile)
             Table = [['Song Name', 'Singer', 'tempo', 'energy', 'loudness', 'danceability', 'valence', 'acousticness',  'happy', 'angry', 'sad', 'relax', 'Mood Class']]
             for i in range(len(titledata)):

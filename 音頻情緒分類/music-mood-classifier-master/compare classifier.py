@@ -56,7 +56,7 @@ features = vec.fit_transform(df_features).toarray()
 ##### split up in test and training data ####
 from sklearn.model_selection import train_test_split
 
-features_train, features_test, labels_train, labels_test = train_test_split( features, labels, test_size=0.20, random_state=91)
+features_train, features_test, labels_train, labels_test = train_test_split( features, labels, test_size=0.20, random_state=0)
 
 
 #### Fit to random forests ####

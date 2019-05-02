@@ -3,10 +3,10 @@ titledata2=[]
 singerdata=[] #singer
 singerdata2=[]
         
-with open('combine(2000)0415-song.txt','r') as f:
+with open('combine(2000)0426-song.txt','r') as f:
         for line in f:
             titledata.append(line.strip('\n').split(','))
-with open('combine(2000)0415-singer.txt','r') as f:
+with open('combine(2000)0426-singer.txt','r') as f:
         for line in f:
             singerdata.append(line.strip('\n').split(','))
 
@@ -38,5 +38,5 @@ for i in range(len(singerdata)):
     singer = eval(aname)
     val = (song, singer,"","")
     cur.execute(sql, val)
-cur.close () 
-conn.close()
+##cur.close () 
+##conn.close()

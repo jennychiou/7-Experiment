@@ -15,7 +15,8 @@ from sklearn.linear_model import LogisticRegression
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 import urllib.parse
-
+import nltk
+nltk.download('stopwords')
 
 def wcloud(word_string):
     # Convert all the required text into a single string here
