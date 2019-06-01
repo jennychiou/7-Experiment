@@ -4,8 +4,7 @@ import os
 import click
 import sys
 
-def file_path(path,Extension):
-    base_path = path
+def file_path(base_path,Deputy_file_name):
     folder_list = []
     file_list = []
     file_name = []
@@ -16,7 +15,7 @@ def file_path(path,Extension):
         for f in files:
             file_path = join(root, f)
                 
-            if file_path.endswith(Extension):
+            if file_path.endswith(Deputy_file_name):
                 file_name.append(os.path.splitext(f)[0])
                 file_list.append(file_path)
         
