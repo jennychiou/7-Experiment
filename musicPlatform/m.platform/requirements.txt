@@ -1,0 +1,5 @@
+python-dotenv
+django-dotenv
+django 
+pymysql
+pymongo == 3.8.0

@@ -1,0 +1,5 @@
+[client]
+database = tracks
+user = 'ur_mysql_user_name'
+password = 'ur_mysql_password'
+default-character-set = utf8

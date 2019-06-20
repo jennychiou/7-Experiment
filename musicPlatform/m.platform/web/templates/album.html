@@ -1,0 +1,229 @@
+
+{% load static %} 
+<html lang="zh-TW">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/forPlaylists.css' %}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+    @media screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0) {
+        img {
+            max-width:400px;
+            max-height:400px;}
+        .container{
+            margin-top:2em;
+        }
+        }
+        #previous{
+            margin-bottom:2.5em;
+        }
+        #next{
+            margin-bottom:2.5em;
+        }
+        .absolute{
+            margin-right:1em; 
+        }
+        .song_text:hover {
+            color:#6c757d;
+            cursor: pointer;
+        }
+        .list-group-item{
+            padding-bottom: 0px;
+            padding-top: .5em;
+        }
+        .btn-link {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div class="container">
+    <div class="row" id='playerContainer'>
+        <div class="col-md-5 col-sm-10">
+            <img class="song_img" src="{{ album.0.img}}" alt="">
+                <h3 id="song_name" class="text-center">{{ album.0.name}}</h3>
+        </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6 col-sm-12" >
+        <form action="/tracks/artist/info/{{album.0.artist_id}}" style="margin-block-end: 0em;" method="get">
+            <button type="submit" class="btn btn-link" style="font-size:20px"> Artist: {{album.0.artist}}</button>
+        </form>
+        <br>
+        <button  id="previous" type="button" class="btn btn-light" onclick="previous_song()" >Previous</button>
+        <audio src="{{ album.0.preview_url}}" controls autoplay buffered volume id="player" data-content="0"></audio>   
+        <!-- <audio src="{% static 'music/' %}{{ album.0.name}}.mp3" controls autoplay buffered volume id="player" data-content="0"></audio>    -->
+        <button id="next"  type="button" class="btn btn-light" onclick="next_song()">Ｎext</button>
+        <ul class="list-group list-group-flush playlist">
+        <p type="hiddn" id="all_data" data-content="{{ album }}"></p>
+            {% for track in album %}
+                {% if track.user == ''%}
+                    <li  class="list-group-item" >
+                        <button type="button" class="btn btn-link absolute" onclick="save_playlist()" value="{{track.album_id}}:{{track.track_id}}">＋</button>
+                    <p onclick="change()" id="{{forloop.counter}}" data-content='{{forloop.counter}}' class="song_text" style="display: inline-block">{{ track.name }}</p>
+                    </li>
+                {% else %}
+                    <li  class="list-group-item" >
+                        <button type="button" class="btn btn-link absolute" onclick="save_playlist()" value="{{track.album_id}}:{{track.track_id}}">♡</button>
+                    <p onclick="change()" id="{{forloop.counter}}" data-content='{{forloop.counter}}' class="song_text" style="display: inline-block">{{ track.name }}</p>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-1"></div>
+    </div>
+    </div>
+</body>
+<script>
+var player_detial = {};
+var now_playing_index = $("audio").data().content;
+var all_tracks_data = $("#all_data").data().content;
+all_tracks_data = all_tracks_data.replace(/'/gi,'\"');
+// console.log(all_tracks_data);
+all_tracks_data = JSON.parse(all_tracks_data);
+var track_obj = null;
+var now_playing_name;
+
+function next_song(){
+    // 判斷是否超出所有歌曲範圍
+    // console.log(all_tracks_data);
+    if (now_playing_index < all_tracks_data.length - 1){
+        if (!player_detial['ended']){
+            //  尚未播完目前的歌曲 切下一首 紀錄目前播放參數 
+            now_playing_name = document.getElementById('song_name').innerText;
+            now_playing_track_id = all_tracks_data[now_playing_index].track_id;
+            console.log('log record---> ', 'record name:', now_playing_name, 'record id:', now_playing_track_id)
+            swithc_compute_time(player_detial['currentTime'], now_playing_name, now_playing_track_id)
+        }
+        // 再更改正在播放的歌曲index : 為目前的index+1
+        now_playing_index = parseInt(now_playing_index, 10) +1;
+        track_obj = all_tracks_data[now_playing_index];
+        $('#player').attr('src', all_tracks_data[now_playing_index].preview_url);
+        $('#song_name').text(all_tracks_data[now_playing_index].name);
+        $("audio").data().content = now_playing_index;
+        console.log('::::Next Track::::')
+        console.log('now playing index', now_playing_index, 
+                    'now playing name:', all_tracks_data[now_playing_index].name)
+    }
+}
+function previous_song(){
+    // 判斷是否超出所有歌曲範圍
+    if (now_playing_index > 0) {
+        if (!player_detial['ended']){
+            // 尚未播完目前的歌曲 切上一首 紀錄目前播放參數
+            now_playing_name = document.getElementById('song_name').innerText;
+            now_playing_track_id = all_tracks_data[now_playing_index].track_id;
+            console.log('log record---> ', 'record name:', now_playing_name, 'record id:',now_playing_track_id)
+            swithc_compute_time(player_detial['currentTime'], now_playing_name, now_playing_track_id)
+        }
+        // 再更改正在播放的歌曲index: 為目前的index-1
+        now_playing_index = parseInt(now_playing_index, 10) -1;
+        track_obj = all_tracks_data[now_playing_index];
+        $('#player').attr('src', all_tracks_data[now_playing_index].preview_url);
+        $('#song_name').text(all_tracks_data[now_playing_index].name);
+        $("audio").data().content = now_playing_index;
+        console.log('::::Previous Track::::')
+        console.log('now playing index', now_playing_index, 
+                    'now playing name:', all_tracks_data[now_playing_index].name)
+    }
+}
+
+function change() {
+    // 當使用者點擊清單中的歌曲
+    now_playing_name = document.getElementById('song_name').innerText;
+    if (now_playing_index == 0) {
+        original_track_id = all_tracks_data[now_playing_index].track_id;
+    }else{
+        original_track_id = all_tracks_data[now_playing_index-1].track_id;
+    }
+    console.log('log record---> ', 'record name:', now_playing_name, 'record id:', original_track_id)
+    swithc_compute_time(player_detial['currentTime'], now_playing_name)
+    now_playing_index = event.target.id;
+    $('#player').attr('src', all_tracks_data[now_playing_index-1].preview_url);
+    $('#song_name').text(all_tracks_data[now_playing_index-1].name);
+    $("audio").data().content = now_playing_index;
+    console.log('now playing index', now_playing_index-1, 
+                    'now playing name:', all_tracks_data[now_playing_index-1].name)
+}
+
+function swithc_compute_time(currentTime, track_name, track_id){
+    if (currentTime > 10){
+        var xhr = new XMLHttpRequest();
+        player_detial['listen'] = true;
+        player_detial['listenTime'] = currentTime;
+        player_detial['track_name'] = track_name;
+        player_detial['end'] = false;
+        player_detial['track_id'] = track_id;
+        xhr.open('POST', url= 'logs');
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.send(JSON.stringify(player_detial));
+    }
+}
+
+function save_playlist(){
+    var xhr = new XMLHttpRequest();
+    var add_detail = {}
+    add_detail['track'] = event.target.value;
+    add_detail['user'] = document.getElementById('user_name').innerText;
+    if ($(event.target).text() === '＋') {
+        xhr.open('POST', url= '/tracks/add');
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.send(JSON.stringify(add_detail));
+        
+        $(event.target).text('♡');
+    } else {
+        xhr.open('POST', url= '/tracks/remove');
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.send(JSON.stringify(add_detail));
+        $(event.target).text('＋');
+    }
+}
+
+
+(function (window, undefined) {
+    var user = document.getElementById('user_name').innerText;
+    var player = document.getElementById('player');
+    player_detial['user'] = user;
+    map = ['src', 'currentTime', 'duration', 'paused', 'loop', 'ended'];
+    window.setInterval(function () {
+        for (var i = 0, j = map.length; i < j; i++) {
+            player_detial[map[i]] = player[map[i]];
+            var xhr = new XMLHttpRequest();
+            ifEnded = player_detial['ended']
+            currentTime = player_detial['currentTime']
+        }
+        if ((ifEnded == true))
+            {
+                // 播放完畢紀錄logs
+                player_detial['listenTime'] = 30.00;
+                player_detial['track_name'] = document.getElementById('song_name').innerText;
+                player_detial['track_id'] = all_tracks_data[now_playing_index].track_id;
+                player_detial['end'] = true;
+                player_detial['listen'] = false;
+                player.currentTime = 0;
+                xhr.open('POST', url= 'logs');
+                xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                xhr.send(JSON.stringify(player_detial));
+                console.log(player_detial)
+                have_next = next_song();
+            }
+    }, 1000);
+    }
+    )(window);
+
+window.onbeforeunload = confirmExit;
+  function confirmExit()
+  {
+    if (player_detial['currentTime'] > 10){    
+        var xhr = new XMLHttpRequest();
+        player_detial['track_name'] = document.getElementById('song_name').innerText;
+        player_detial['listen'] = true;
+        xhr.open('POST', url= 'logs');
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.send(JSON.stringify(player_detial));   
+    }    
+    // return "want to leave?"
+  }
+</script>

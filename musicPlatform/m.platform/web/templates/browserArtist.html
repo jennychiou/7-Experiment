@@ -1,0 +1,48 @@
+
+{% load static %} 
+<html lang="zh-TW">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/forBrowserArtist.css' %}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div class="container" style="margin-top:0.5em">
+      <p>Every time you refresh page will get 30 different artists, you can select artists from letter:</p>
+        <div class="row" id="all_english_letter">
+        </div>
+        <hr>
+        <div class="row" id="artist_selected">
+        {% for artist in artist_list %}
+            <div class="col-4 img_container">
+                <form action="/tracks/artist/info/{{artist.id}}" method="get">
+                <img src="{{artist.img_url}}" alt="Avatar" class="image" style="width:100%">
+                <button class="overlay">
+                    <div class="text">{{ artist.name }}</div>
+                </button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>  
+    </div>
+</body>
+<script>
+    var this_div = document.getElementById("all_english_letter");
+    var myHTML =''
+    letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    for(var i=0; i<26; i++) {
+        myHTML = myHTML +  '&nbsp&nbsp<button type="button" class="btn btn-link btn-sm" onclick="select_letter()" value="'+ letters[i] + '">'+ letters[i] +'</button>';
+    }
+    this_div.innerHTML = myHTML;
+
+    function select_letter(){
+        letter = event.target.value;
+        $.get( letter, function(responseText) {
+            document.getElementById("artist_selected").innerHTML = responseText;
+        });
+    }
+
+</script>
+

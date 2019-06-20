@@ -1,0 +1,48 @@
+@media(min-width:576px) and (max-width:767px){
+    #player{
+        max-width: 300px;
+        width:300px;
+    }
+    .song_img{
+        max-width: 400px;
+    }
+  } 
+  /*md*/
+   @media(min-width:768px) and (max-width:991px){
+
+  } 
+  /*lg*/
+   @media(min-width:992px) and (max-width:1199px){
+
+  } 
+  /*xl*/
+  @media (min-width:1120px){
+
+  }
+
+.playlist{    
+    margin-top:0em;
+    height:20em;
+    overflow:auto;
+}
+#player{
+    width: 350px;
+}
+
+#playerContainer{
+    margin-top:1em;
+}
+
+#song_name{
+    margin-top:1em;
+}
+.song_img{
+    max-width: 450px;
+}
+
+.margin-top3em{
+    margin-top:3em
+}
+.margin-bottom3em{
+    margin-bottom:3em
+}

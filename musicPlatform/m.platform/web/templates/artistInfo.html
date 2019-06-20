@@ -1,0 +1,83 @@
+
+{% load static %} 
+<html lang="zh-TW">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/forBrowserArtist.css' %}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <style>
+        button{
+            border: 0px;
+        }
+        form{
+            margin-block-end: 0em;
+        }
+        .img_container {
+            position: relative;
+            padding-right:0px;
+            padding-left:0px;
+            width: 100%; 
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+            /* border-radius: 10%; */
+            /* opacity: 0.9; */
+            filter: alpha(opacity=20); /* For IE8 and earlier */
+            width: 350px;
+            height: auto;
+            /* border-radius:10%; */
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .3s ease;
+            background-color:#FFFFFB;
+        }
+
+        .img_container:hover .overlay {
+            opacity: 1;
+        }
+        .text {
+            color: #787878;
+            font-size: 1.5em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-20%, -20%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div class="container" style="margin-top:0.5em">
+        <div class="row">
+        {% for album in artist_album %}
+            <div class="col-4 img_container">
+                <form action="/tracks/album/info/{{album.id}}" method="get">
+                <img src="{{album.img_url}}" alt="Avatar" class="image" style="width:100%">
+                <button class="overlay">
+                    <div class="text">{{ album.name }}</div>
+                </button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>  
+    </div>
+</body>
+

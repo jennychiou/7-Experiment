@@ -1,0 +1,12 @@
+<div class="row" id="artist_selected">
+        {% for artist in artist_list %}
+            <div class="col-4 img_container">
+                <form action="/tracks/artist/info/{{artist.id}}" method="get">
+                <img src="{{artist.img_url}}" alt="Avatar" class="image" style="width:100%">
+                <button class="overlay">
+                    <div class="text">{{ artist.name }}</div>
+                </button>
+                </form>
+            </div>
+    {% endfor %}
+</div>  

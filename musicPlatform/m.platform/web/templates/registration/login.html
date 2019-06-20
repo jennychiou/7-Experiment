@@ -1,0 +1,53 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<style>
+  form{
+    width: 340px;
+  }
+  #id_username{
+    width: 250px;
+  }
+  #id_password{
+    width: 250px;
+    margin-left: 5px;
+  }
+</style>
+<div class="container">
+  <div class="row" style="margin-top:8em">
+      <div class="col-md-4 col-sm-1"></div>
+      <div class="col-md-5 col-sm-10">
+          <div class="row">
+              {% if form.errors %}
+                <p>Your username and password didn't match. Please try again.</p>
+              {% endif %}
+              {% if next %}
+                {% if user.is_authenticated %}
+                  <p>Your account doesn't have access to this page. </p>
+                   <p>Please login with an account that has access.</p>
+                {% else %}
+                  <p>Please login to see this page.</p>
+                {% endif %}
+              {% endif %}
+            </div>
+          <div class="row">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div>
+                  <td class="input-width">{{ form.username.label_tag }}</td><td>{{ form.username }}</td>
+                </div>
+                <div>
+                  <td  class="input-width">{{ form.password.label_tag }}</td><td>{{ form.password }}</td>
+                </div>
+                <div>
+                  <br>
+                  <input class="btn btn-block btn-outline-dark" type="submit" value="login" />
+                  <input type="hidden" name="next" value="{{ next }}" />
+                </div>
+              </form>
+                {# Assumes you setup the password_reset view in your URLconf #}
+              <!-- <p><a href="{% url 'password_reset' %}">Lost password?</a></p> -->
+          </div>
+        </div>
+  </div>
+</div>
+ 

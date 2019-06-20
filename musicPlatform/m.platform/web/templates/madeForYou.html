@@ -1,0 +1,43 @@
+
+{% load static %} 
+<html lang="zh-TW">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/forBrowserArtist.css' %}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 0.9;
+        width: 500px;
+        height: 350px;
+        object-fit: cover;
+        background-color: #f0f0f0;
+    }
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div class="container" style="margin-top:0.5em">
+    
+        <h5>Hello {{ user.get_username }} , These Playlist are Made For YOU! </h5>
+        <hr>
+        <div class="row" id="artist_selected">
+        {% for list in numberoflist%}
+            <div class="col-6 img_container">
+                <form action="/tracks/browser/madeforyou/list/{{ forloop.counter0 }}" method="get">
+                <img  class="image" style="width:100%">
+                <button class="overlay">
+                    <div class="text">{{list}}</div>
+                </button>
+                </form>
+            </div>
+        {% endfor %}
+    
+        </div>  
+    </div>
+</body>
+

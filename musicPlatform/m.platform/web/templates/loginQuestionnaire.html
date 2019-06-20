@@ -1,0 +1,56 @@
+
+{% load static %} 
+<html lang="zh-TW">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/forPlaylists.css' %}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        .questionPlayer{
+            max-height: 40px;
+        }
+        label{
+            padding-top:.5em;
+        }
+        form{
+            margin-left:.5em;
+        }
+        #finished_btn{
+            margin-left:-.5em;
+            margin-top:2em;
+        }
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div class="container" style="margin-top:2rem">
+        <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+        <h3>For the first login </h3>
+        <p>Please fill out the survey and each song's score between 1-5 points.</p>
+        <hr>
+            <form method="POST" action="/tracks/finished/questionnarire">
+                {% for track in questions %}
+                <p>{{forloop.counter}}. {{track.name}} by {{ track.artist_name}}.</p> 
+                <div class="row">
+                    <audio src="{{ track.preview_url }}" class="questionPlayer" controls buffered volume></audio>
+                    <div class="form-group col-md-5 col-sm-5">
+                        <select id="inputState" class="form-control" name="{{ track.id }}">
+                            <option value="1">1 分</option>
+                            <option value="2">2 分</option>
+                            <option value="3">3 分</option>
+                            <option value="4">4 分</option>
+                            <option value="5">5 分</option>
+                        </select>
+                    </div>
+                </div>
+                {% endfor%}
+                <button id="finished_btn" type="submit" class="btn btn-primary btn-md btn-block">Submit Questionnarire !</button>
+            </form>
+          </div>
+        </div>
+        </div>
+    </div>
+</body>
