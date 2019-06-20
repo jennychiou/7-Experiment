@@ -1,0 +1,48 @@
+C:\Users\LAB_JennyChiou
+λ history
+d:
+cd D:\中興資管所\7 實驗進度\音頻情緒分類\web-api-auth-examples-master
+cd authorization_code\
+node app.js
+d:
+cd D:\中興資管所\7 實驗進度\音頻情緒分類\web-api-auth-examples-master\authorization_code
+node app.js
+cd D:\中興資管所\7 實驗進度\音頻情緒分類\web-api-auth-examples-master\authorization_code
+node app.js
+d:
+D:\
+cd D:\中興資管所\7 實驗進度\音頻情緒分類\web-api-auth-examples-master\authorization_code
+node app.js
+d:
+cd D:\中興資管所\7 實驗進度\音頻情緒分類\web-api-auth-examples-master\authorization_code
+node app.js
+node app.js
+cd D:\中興資管所\7 實驗進度\音頻情緒分類\web-api-auth-examples-master\authorization_code
+node app.js
+pip
+pip3
+cd d
+d
+d:
+ls
+cd D:\Software\MongoDB\bin
+ls
+cd ..
+cd d
+d
+cd D:\Software\MongoDB\bin
+ls
+mysq;
+mysql
+cd D:\中興資管所\7 實驗進度\musicPlatform\m.platform
+cd "D:\中興資管所\7 實驗進度\musicPlatform\m.platform\web"
+d:
+vim urls.py
+vim my.example.cnf
+history
+history
+python manage.py shel
+cd ..
+python manage.py shell
+ls
+python manage.py runserver
