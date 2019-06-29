@@ -6,25 +6,98 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/forBrowserArtist.css' %}">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<style>
+    audio {
+        margin-left: 1.5em
+    }
+    p {
+        margin-bottom: 0em; 
+        margin-top:1em;
+    }
+    .rating {
+        float:left;
+    }
+    .rating:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+        clip:rect(0, 0, 0, 0);
+    }
+    .rating:not(:checked) > label {
+        float:right;
+        width:1em;
+        padding:0 .1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:200%;
+        line-height:1.2;
+        color:#ddd;
+        /* text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5); */
+    }
+    .rating:not(:checked) > label:before {
+        content: #9733;
+    }
+    .rating > input:checked ~ label {
+        color: gold;
+        /* text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5); */
+    }
+    .rating:not(:checked) > label:hover, .rating:not(:checked) > label:hover ~ label {
+        color: gold;
+        /* text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5); */
+    }
+    .rating> input:checked + label:hover, .rating> input:checked + label:hover ~ label, .rating> input:checked ~ label:hover, .rating> input:checked ~ label:hover ~ label, .rating> label:hover ~ input:checked ~ label {
+        color: #ea0;
+        /* text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5); */
+    }
+    .rating > label:active {
+        position:relative;
+        top:2px;
+        left:2px;
+    }
+</style>
 </head>
 <body>
     {% include "navbar.html" %}
+    {% if tracks %}
     <div class="container" style="margin-top:0.5em">
-
-
         <div class="row" id="artist_selected">
-        {% for list in numberoflist%}
-            <!-- <div class="col-6 img_container">
-                <form action="/tracks/browser/madeforyou/{{ forloop.counter }}" method="get">
-                <img  class="image" style="width:100%">
-                <button class="overlay">
-                    <div class="text">{{list}}</div>
-                </button>
-                </form> -->
+        <div class="col-md-2 col-sm-1"></div>
+            <div class="col-md-6 col-sm-10 img_container">
+                <div  class="p-3 mb-2 bg-info text-white text-center">Please Rate Between 1 - 5</div>
+                <hr>
+                <form method="POST" action="/tracks/recresults/submit/from/list/">
+                    {% for track in tracks %}
+                    <p>{{forloop.counter}}. {{track.name}} by {{track.artist_name}} </p> 
+                    <div class="row">
+                        <audio src="{{ track.preview_url }}" class="questionPlayer" controls buffered volume></audio>
+                        <div class="form-group col-md-5 col-sm-5">
+                            <fieldset class="rating one">
+                                <input type="radio" id="star5-{{forloop.counter}}" name="{{ track.track_id }}" value="5" /><label for="star5-{{forloop.counter}}" title="Rocks!"><span>&#9733</span></label>
+                                <input type="radio" id="star4-{{forloop.counter}}" name="{{ track.track_id }}" value="4" /><label for="star4-{{forloop.counter}}" title="Pretty good"><span>&#9733</span></label>
+                                <input type="radio" id="star3-{{forloop.counter}}" name="{{ track.track_id }}" value="3" /><label for="star3-{{forloop.counter}}" title="Meh"><span>&#9733</span></label>
+                                <input type="radio" id="star2-{{forloop.counter}}" name="{{ track.track_id }}" value="2" /><label for="star2-{{forloop.counter}}" title="Kinda bad"><span>&#9733</span></label>
+                                <input type="radio" id="star1-{{forloop.counter}}" name="{{ track.track_id }}" value="1" /><label for="star1-{{forloop.counter}}" title="Sucks big time"><span>&#9733</span></label>
+                            </fieldset>          
+                        </div>
+                    </div>
+                    {% endfor%}
+                    <input type='hidden' value="{{tracks.0.recom_method}}" name="recommend_method">
+                   <hr>
+                    <button id="finished_btn" type="submit" class="btn btn-primary btn-md btn-block">Submit</button>
+                </form>
             </div>
-        {% endfor %}
-    
         </div>  
     </div>
+    {% else %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="p-3 mb-2 bg-light text-dark text-center">You have scored all the songs !</div>
+            </div>
+        </div>
+    </div>
+{% endif %}
 </body>
 
