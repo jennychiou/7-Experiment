@@ -19,17 +19,17 @@ album_iddata2 = []
 album_img_urldata2 = []
 
 with open('track_id.txt','r') as f:
-        for line in f:
-            track_iddata.append(line.strip('\n').split(','))
+    for line in f:
+        track_iddata.append(line.strip('\n').split(','))
 ##with open('name.txt','r') as f:
-##        for line in f:
-##            namedata.append(line.strip('\n').split(','))
+##  for line in f:
+##      namedata.append(line.strip('\n').split(','))
 with open('artist_id.txt','r') as f:
-        for line in f:
-            artist_iddata.append(line.strip('\n').split(','))
+    for line in f:
+        artist_iddata.append(line.strip('\n').split(','))
 ##with open('artist_name.txt','r') as f:
-##        for line in f:
-##            artist_namedata.append(line.strip('\n').split(','))
+##  for line in f:
+##      artist_namedata.append(line.strip('\n').split(','))
 with open('track_preview_url.txt','r') as f:
         for line in f:
             track_preview_urldata.append(line.strip('\n').split(','))

@@ -27,4 +27,5 @@ set @score = '4';
 insert into tracks_recsysresults2 (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);
 select * from tracks_recsysresults2;
 
-#delete from tracks_recsysresults2 where user_id = 'chiouchingyi';
+delete from tracks_recsysresults2 where user_id = 'chiouchingyi';
+UPDATE tracks_recsysresults2 SET score = '';

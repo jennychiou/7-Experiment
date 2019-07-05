@@ -11,7 +11,8 @@ select * from tracks_audiolyricsembedding;
 select * from tracks_audiolyricstop20;
 
 -- select * from tracks_survey20tracks;
--- select * from tracks_survey20tracksfeatures;
+select * from tracks_survey20tracksfeatures;
+select * from tracks_survey20trackstop20;
 select * from tracks_surveyresults;
 select * from tracks_usersurveycompleted;
 select * from tracks_dataforrec;
