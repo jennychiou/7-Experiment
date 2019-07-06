@@ -7,7 +7,7 @@ db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='8
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id = "chiouchingyi"
+user_id = 'lintimken'
 getsurveyresult = "select results from tracks_surveyresults where user='{}'".format(user_id)
 data1 = cursor.execute(getsurveyresult)
 ##print(data1)  # 返回為0或者1，1表示有資料，0表示無資料或失敗
@@ -17,20 +17,20 @@ rs1 = cursor.fetchall()
 for row in rs1:
     result = row[0]
     print('用戶調查記錄：','\n',result)
-print('-------------------------------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 x = result.replace('{','').replace('}','')
 ##print(x)
-##print('-------------------------------------------------------------------------------------')
+##print('---------------------------------------------------------------------')
 y = x.split(',')
 ##print(y)
 ##print('y[0]:',y[0])
 ##print('長度：',len(y))
-##print('-------------------------------------------------------------------------------------')
+##print('---------------------------------------------------------------------')
 z = y[0].split(':')
 ##print('trackID:', z[0].replace("'",'')) #replace方法去掉引號
 ##print('score: ', z[1].replace("'",'')) #replace方法去掉引號
 ##print(eval(z[0])) #eval去掉引號
-##print('-------------------------------------------------------------------------------------')
+##print('---------------------------------------------------------------------')
 
 ##抓用戶調查分數
 trackID_select= []
@@ -49,7 +49,7 @@ for i in range(len(y)):
         trackID_select.append(trackID)
         count += 1
 
-print('-------------------------------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 print('rating = ',rating)
 print('相對高分歌曲：','\n',trackID_select)
 
@@ -63,10 +63,10 @@ if count == 0:
         if score == 4:
             print('第',i+1,'首:',trackID,'|',score)
             trackID_select.append(trackID)
-    print('-------------------------------------------------------------------------------------')
+    print('---------------------------------------------------------------------')
     print('相對高分歌曲：','\n',trackID_select)
                     
-print('-------------------------------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
 ##推薦方法
 recom_method = "0" #Audio
@@ -83,8 +83,7 @@ df = pd.read_csv('temp/survry20tracks_sim_outputEUCcsv.csv')
 count = 0
 rankvalue_list= []
 data_folder = "CSVTables/surveyresult/"
-user_id= 'chiouchingyi'
-filepath = data_folder + user_id + '_surveyresult' + '.csv'
+filepath = data_folder + user_id + '_surveyresult_a' + '.csv'
 print('路徑：',filepath)
 
 with open(filepath, "w", newline='') as csvfile:
@@ -108,7 +107,7 @@ with open(filepath, "w", newline='') as csvfile:
 ##            print('rating:',ratingvalue)
 ##            print('similarity:',similarity)
 ##            print('rankvalue:',rankvalue)
-##            print('--------------------------------------------------------')
+##            print('---------------------------------------------------------------------')
             count += 1
 
             Table = [[i,j,survey_track_name,rec_track,ratingvalue,similarity,rankvalue]]
@@ -127,7 +126,29 @@ table_df_sort = table_df.sort_values(by = "rankvalue", ascending=False) #ascendi
 print('前20高分歌曲：')
 print(table_df_sort.head(20))
 final_table = table_df_sort.iloc[0:20]
+print('---------------------------------------------------------------------')
 
+#去除重複推薦之歌曲
+print('檢查重複歌曲：')
+print(final_table['rec_track'].duplicated())
+print('---------------------------------------------------------------------')
+final_table_new = final_table.drop_duplicates(subset=['rec_track'], keep='first')
+print('去除重複推薦之歌曲：')
+print(final_table_new)
+print('列表長度：',len(final_table_new))
+print('---------------------------------------------------------------------')
+filepath2 = data_folder + user_id + '_surveyresult_a_new' + '.csv'
+if len(final_table_new) < 20:
+    diff = 20 - len(final_table_new)
+    print('差：',diff)
+    insert = table_df_sort[20:20+diff]
+    final_table_insert = final_table_new.append(insert)
+    print('列表長度：',len(final_table_insert))
+##    print(final_table_insert)
+    final_table_insert.to_csv(filepath2)
+else:
+    final_table.to_csv(filepath2)
+    
 ##track_id = '001rKAr9siVsYzpSooZRF0'
 ##gettop20_2 = "select a_top2 from tracks_audiolyricstop20 where id='{}'".format(track_id)
 ##cursor.execute(gettop20_2)
@@ -147,9 +168,12 @@ final_table = table_df_sort.iloc[0:20]
 
 #取推薦歌曲ID
 ##print(final_table.iat[0,3])
-##print(final_table.iat[1,3])
+##print(final_table.iat[19,3])
 for m in range(20):
-    track_id = final_table.iat[m,3]
+    if len(final_table_new) < 20:
+        track_id = final_table_insert.iat[m,3]  # 有插入新列
+    else:
+        track_id = final_table_new.iat[m,3]   # 沒插入新列
     recom_rank = m + 1
 
     sql_1 = "set SQL_SAFE_UPDATES = 0"
@@ -161,8 +185,8 @@ for m in range(20):
     sql_7 = "set @artist_name = (select artist_name from tracks_artist where id = @artist_id)"
     sql_8 = "set @recom_method = '{}'".format(recom_method)
     sql_9 = "set @recom_rank = '{}'".format(recom_rank)
-    sql_10 = "set @score = '5'"
-    sql_11 = "insert into tracks_recsysresults2 (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);"
+    sql_10 = "set @score = ''"
+    sql_11 = "insert into tracks_recsysresults (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);"
 
     try:
         cursor.execute(sql_1) 
@@ -182,7 +206,7 @@ for m in range(20):
         print('處理失敗:', e)
     else:
         db.commit()
-        print(m,'--','處理成功:', cursor.rowcount)
+        print(m+1, '--', '處理成功:', cursor.rowcount)
 
     # 關閉連接
 ##    cursor.close()

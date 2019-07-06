@@ -9,7 +9,8 @@ import pandas as pd
 第 20 首:  7uRznL3LcuazKpwCTpDltz | 5
 '''
 #用戶
-rating = [2,5,1,4,4,1,5,2,5,4,1,5,4,3,2,1,5,2,1,5]
+rating = [2,5,1,4,4,1,5,2,5,4,1,5,4,3,2,1,5,2,1,5]  # chiouchingyi
+##rating = [3,5,1,3,3,2,5,3,5,3,2,5,4,4,3,2,5,3,3,4]  # lintimken
 ##print(len(rating))
 survey_track = ['1au9q3wiWxIwXTazIjHdfF','1ExfPZEiahqhLyajhybFeS','1fLlRApgzxWweF1JTf8yM5','1pSIQWMFbkJ5XvwgzKfeBv',
                 '1UMJ5XcJPmH6ZbIRsCLY5F','2W2eaLVKv9NObcLXlYRZZo','3S0OXQeoh0w6AY8WQVckRW','3wF0zyjQ6FKLK4vFxcMojP',
@@ -31,7 +32,7 @@ count = 0
 rankvalue_list= []
 data_folder = "CSVTables/surveyresult/"
 user_id= 'chiouchingyi'
-filepath = data_folder + user_id + '_surveyresult' + '.csv'
+filepath = data_folder + user_id + '_surveyresult_a' + '.csv'
 print('路徑：',filepath)
 
 #每位用戶生成一個csv推薦清單
@@ -56,7 +57,7 @@ with open(filepath, "w", newline='') as csvfile:
 ##            print('rating:',ratingvalue)
 ##            print('similarity:',similarity)
 ##            print('rankvalue:',rankvalue)
-##            print('--------------------------------------------------------')
+##            print('---------------------------------------------------------------------')
             count += 1
 
             Table = [[i,j,survey_track_name,rec_track,ratingvalue,similarity,rankvalue]]
@@ -68,8 +69,9 @@ with open(filepath, "w", newline='') as csvfile:
         rank_sort_value =  rankvalue_list[0]
 ##        print(rank_sort_value)
 
-print('===== DONE =====')
+print('===== IMPORT DONE =====')
 print('rankvalue_list長度:',len(rankvalue_list))
+print('---------------------------------------------------------------------')
 
 #取推薦之20首歌曲
 table_df = pd.read_csv(filepath)
@@ -79,12 +81,40 @@ table_df_sort = table_df.sort_values(by = "rankvalue", ascending=False) #ascendi
 print('前20高分歌曲：')
 print(table_df_sort.head(20))
 final_table = table_df_sort.iloc[0:20]
+print('---------------------------------------------------------------------')
+##x = table_df_sort[21:24]
+##print(x)
+
+#去除重複推薦之歌曲
+print('檢查重複歌曲：')
+print(final_table['rec_track'].duplicated())
+print('---------------------------------------------------------------------')
+final_table_new = final_table.drop_duplicates(subset=['rec_track'], keep='first')
+print('去除重複推薦之歌曲：')
+print(final_table_new)
+print('列表長度：',len(final_table_new))
+print('---------------------------------------------------------------------')
+filepath2 = data_folder + user_id + '_surveyresult_a_new' + '.csv'
+if len(final_table_new) < 20:
+    diff = 20 - len(final_table_new)
+    print('差：',diff)
+    insert = table_df_sort[20:20+diff]
+    final_table_insert = final_table_new.append(insert)
+    print('最終推薦20首歌曲：')
+    print(final_table_insert)
+    print('列表長度：',len(final_table_insert))
+    final_table_insert.to_csv(filepath2)
+else:
+    final_table.to_csv(filepath2)
 
 #取推薦歌曲ID
-print(final_table.iat[0,3])
-print(final_table.iat[1,3])
+##print(final_table_insert.iat[0,3])
+##print(final_table_insert.iat[19,3])
 for m in range(20):
-    track_id = final_table.iat[m,3]
+    if len(final_table_new) < 20:
+        track_id = final_table_insert.iat[m,3]  # 有插入新列
+    else:
+        track_id = final_table_new.iat[m,3]   # 沒插入新列
     recom_rank = m + 1
 
 ##        if i == 19 and j == 20:

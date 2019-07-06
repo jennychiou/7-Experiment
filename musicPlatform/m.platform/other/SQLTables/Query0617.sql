@@ -17,8 +17,8 @@ select * from tracks_surveyresults;
 select * from tracks_usersurveycompleted;
 select * from tracks_dataforrec;
 
--- select * from tracks_recsysresults;
-select * from tracks_recsysresults2;
+select * from tracks_recsysresults;
+-- select * from tracks_recsysresults2;
 -- select * from tracks_recfromrlresults;
 
 SELECT COUNT(*) FROM tracks_features;  # 計算資料筆數
