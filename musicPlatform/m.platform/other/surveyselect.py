@@ -186,7 +186,7 @@ for m in range(20):
     sql_8 = "set @recom_method = '{}'".format(recom_method)
     sql_9 = "set @recom_rank = '{}'".format(recom_rank)
     sql_10 = "set @score = ''"
-    sql_11 = "insert into tracks_recsysresults (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);"
+    sql_11 = "insert into tracks_recsysresults_a (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);"
 
     try:
         cursor.execute(sql_1) 
