@@ -17,7 +17,7 @@ select * from tracks_surveyresults;
 select * from tracks_usersurveycompleted;
 select * from tracks_dataforrec;
 
-select * from tracks_recsysresults;
+select * from tracks_recsysresults;  # 音頻推薦
 -- select * from tracks_recsysresults2;
 -- select * from tracks_recfromrlresults;
 
@@ -25,9 +25,10 @@ SELECT COUNT(*) FROM tracks_features;  # 計算資料筆數
 SELECT COUNT(*) FROM tracks_dataforrec;
 
 # 複製資料表
-CREATE TABLE tracks_recsysresults2 LIKE tracks_recsysresults;
-INSERT tracks_recsysresults2 SELECT * FROM tracks_recsysresults;
+CREATE TABLE tracks_recsysresults_h LIKE tracks_recsysresults_a;
+-- INSERT tracks_recsysresults2 SELECT * FROM tracks_recsysresults_a;
 
 #DROP TABLE tracks_artist;
 #DROP TABLE tracks_features;
 #DROP TABLE tracks_survey20tracks;
+DROP TABLE tracks_recsysresults_l;

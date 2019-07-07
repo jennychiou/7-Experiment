@@ -16,16 +16,21 @@ set @artist_id = (select artist_id from tracks_features where id = @track_id);
 set @artist_name = (select artist_name from tracks_artist where id = @artist_id);
 
 # 推薦方法 recom_method
+set @recom_method = '0';
+
 # 推薦排序 recom_rank
 set @results = (select results from tracks_surveyresults);
-
--- 分數 score
-
-set @recom_method = '0';
 set @recom_rank = '1';
-set @score = '4';
-insert into tracks_recsysresults2 (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);
-select * from tracks_recsysresults2;
 
-delete from tracks_recsysresults where user_id = 'lintimken';
-UPDATE tracks_recsysresults SET score = '';
+# 分數 score
+set @score = '4';
+
+# 寫入資料表
+insert into tracks_recsysresults_a (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);
+select * from tracks_recsysresults_a;
+
+# 清除資料 
+delete from tracks_recsysresults_a where user_id = 'lintimken';
+
+# 更新score欄位值
+UPDATE tracks_recsysresults_a SET score = '';

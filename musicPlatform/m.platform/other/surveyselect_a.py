@@ -79,7 +79,7 @@ survey_track = ['1au9q3wiWxIwXTazIjHdfF','1ExfPZEiahqhLyajhybFeS','1fLlRApgzxWwe
                 '5E5MqaS6eOsbaJibl3YeMZ','5uCax9HTNlzGybIStD3vDh','5WLSak7DN3LY1K71oWYuoN','6G7URf5rGe6MvNoiTtNEP7',
                 '6QPKYGnAW9QozVz2dSWqRg','6rUp7v3l8yC4TKxAAR5Bmx','7qjbpdk0IYijcSuSYWlXO6','7uRznL3LcuazKpwCTpDltz']
 
-df = pd.read_csv('temp/survry20tracks_sim_outputEUCcsv.csv')
+df = pd.read_csv('temp/survry20tracks_sim_a_outputEUCcsv.csv')
 count = 0
 rankvalue_list= []
 data_folder = "CSVTables/surveyresult/"
@@ -186,7 +186,7 @@ for m in range(20):
     sql_8 = "set @recom_method = '{}'".format(recom_method)
     sql_9 = "set @recom_rank = '{}'".format(recom_rank)
     sql_10 = "set @score = ''"
-    sql_11 = "insert into tracks_recsysresults_a (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);"
+    sql_11 = "insert into tracks_recsysresults (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);"
 
     try:
         cursor.execute(sql_1) 

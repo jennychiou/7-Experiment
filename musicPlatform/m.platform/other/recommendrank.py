@@ -24,7 +24,7 @@ survey_track = ['1au9q3wiWxIwXTazIjHdfF','1ExfPZEiahqhLyajhybFeS','1fLlRApgzxWwe
 ##print('評分5分的歌曲：','\n',trackID_select)
 ##print('評分5分的歌曲數量：',len(trackID_select))
 
-df = pd.read_csv('temp/survry20tracks_sim_outputEUCcsv.csv')
+df = pd.read_csv('temp/survry20tracks_sim_a_outputEUCcsv.csv')
 ##print(df.head(3))
 
 #定義每位用戶推薦清單
