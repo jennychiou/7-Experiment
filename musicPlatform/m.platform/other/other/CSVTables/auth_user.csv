@@ -1,0 +1,4 @@
+id,password,last_login,is_superuser,username,first_name,last_name,email,is_staff,is_active,date_joined
+1,pbkdf2_sha256$120000$jJ44CsHuvYAq$0FjHzgBxRp2SwrdBalFCbeahRLWGtmEYOo3jPVQnZ6M=,"2019-06-18 14:46:44.609834",0,test,,,lennon@thebeatles.com,0,1,"2019-06-17 08:11:29.836041"
+2,pbkdf2_sha256$120000$FJ4Y4hcfOyFJ$MiKrcDqg90Af0G0jPQfoIWE4izJEY84eBxpDShcSPeA=,"2019-06-18 14:49:08.239150",0,lintimken,,,email@example.com,0,1,"2019-06-18 14:35:47.528845"
+3,pbkdf2_sha256$120000$huk77OVlows7$99vRQOj1k1DrHBljSBFvcnyWMSwi5Q6nHZbsfoFr2n0=,"2019-06-19 11:42:22.887996",0,chiouchingyi,,,email@example.com,0,1,"2019-06-18 15:51:40.047219"
