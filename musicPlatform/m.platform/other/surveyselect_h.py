@@ -7,125 +7,67 @@ db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='8
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id = 'lintimken'
-getsurveyresult = "select results from tracks_surveyresults where user='{}'".format(user_id)
-data1 = cursor.execute(getsurveyresult)
-##print(data1)  # 返回為0或者1，1表示有資料，0表示無資料或失敗
-rs1 = cursor.fetchall()
-##print(rs1)
+user_id  ='lintimken'
+data_folder = "CSVTables/surveyresult/"
+filepath_a = data_folder + user_id + '_surveyresult_a' + '.csv'
+filepath_l = data_folder + user_id + '_surveyresult_l' + '.csv'
+filepath_h = data_folder + user_id + '_surveyresult_h' + '.csv'
+print('路徑a：',filepath_a)
+print('路徑l：',filepath_l)
+print('路徑h：',filepath_h)
 
-for row in rs1:
-    result = row[0]
-    print('用戶調查記錄：','\n',result)
-print('---------------------------------------------------------------------')
-x = result.replace('{','').replace('}','')
-##print(x)
-##print('---------------------------------------------------------------------')
-y = x.split(',')
-##print(y)
-##print('y[0]:',y[0])
-##print('長度：',len(y))
-##print('---------------------------------------------------------------------')
-z = y[0].split(':')
-##print('trackID:', z[0].replace("'",'')) #replace方法去掉引號
-##print('score: ', z[1].replace("'",'')) #replace方法去掉引號
-##print(eval(z[0])) #eval去掉引號
-##print('---------------------------------------------------------------------')
-
-##抓用戶調查分數
-trackID_select= []
-rating = []
-count = 0
-for i in range(len(y)):
-    x = result.replace('{','').replace('}','')
-    y = x.split(',')
-    z = y[i].split(':')
-    trackID = z[0].replace("'",'')
-    score = int(z[1].replace("'",''))
-    rating.append(score)
-    
-    if score == 5:
-        print('第',i+1,'首:',trackID,'|',score)
-        trackID_select.append(trackID)
-        count += 1
-
-print('---------------------------------------------------------------------')
-print('rating = ',rating)
-print('相對高分歌曲：','\n',trackID_select)
-
-if count == 0:
-    for i in range(len(y)):
-        x = result.replace('{','').replace('}','')
-        y = x.split(',')
-        z = y[i].split(':')
-        trackID = z[0].replace("'",'')
-        score = int(z[1].replace("'",''))
-        if score == 4:
-            print('第',i+1,'首:',trackID,'|',score)
-            trackID_select.append(trackID)
-    print('---------------------------------------------------------------------')
-    print('相對高分歌曲：','\n',trackID_select)
-                    
-print('---------------------------------------------------------------------')
+#讀取audio和lyrics的csv檔
+df_a = pd.read_csv(filepath_a)
+##print(df_a)
+##print(len(df_a))
+##print(df_a['i'][20])
+##print(df_a['j'][20])
+##print(df_a['survey_track'][20])
+##print(df_a['rec_track'][20])
+##print(df_a['rankvalue'][20])
+##df_l = pd.read_csv(filepath_l)
 
 ##推薦方法
 ##recom_method = "0" #Audio
 ##recom_method = "1" #Lyrics
 recom_method = "2" #Hybrid
 
-survey_track = ['1au9q3wiWxIwXTazIjHdfF','1ExfPZEiahqhLyajhybFeS','1fLlRApgzxWweF1JTf8yM5','1pSIQWMFbkJ5XvwgzKfeBv',
-                '1UMJ5XcJPmH6ZbIRsCLY5F','2W2eaLVKv9NObcLXlYRZZo','3S0OXQeoh0w6AY8WQVckRW','3wF0zyjQ6FKLK4vFxcMojP',
-                '4FCb4CUbFCMNRkI6lYc1zI','4RL77hMWUq35NYnPLXBpih','52UWtKlYjZO3dHoRlWuz9S','5b88tNINg4Q4nrRbrCXUmg',
-                '5E5MqaS6eOsbaJibl3YeMZ','5uCax9HTNlzGybIStD3vDh','5WLSak7DN3LY1K71oWYuoN','6G7URf5rGe6MvNoiTtNEP7',
-                '6QPKYGnAW9QozVz2dSWqRg','6rUp7v3l8yC4TKxAAR5Bmx','7qjbpdk0IYijcSuSYWlXO6','7uRznL3LcuazKpwCTpDltz']
-
-df = pd.read_csv('temp/survry20tracks_sim_h_outputEUCcsv.csv')
-count = 0
 rankvalue_list= []
-data_folder = "CSVTables/surveyresult/"
-filepath = data_folder + user_id + '_surveyresult_h' + '.csv'
-print('路徑：',filepath)
-
-with open(filepath, "w", newline='') as csvfile:
+with open(filepath_h, "w", newline='') as csvfile:
 
     writer = csv.writer(csvfile)
-    writer.writerow(['i','j','survey_track','rec_track','rating','similarity','rankvalue'])
+    writer.writerow(['i','j','survey_track','rec_track','rankvalue_a','rankvalue_l','rankvalue'])
 
-    for i in range(0,20):
-        for j in range(1,21):
-    ##        print(i,j)
-            survey_track_name = survey_track[i].replace("'",'')
-            data = df.iat[i,j]
-            data_re = data.replace('[','').replace(']','').replace(' ','')
-            data_sp = data_re.split(',')
-            rec_track = data_sp[0].replace("'",'')
-            similarity = data_sp[1]
-            ratingvalue = rating[i]
-            rankvalue = ratingvalue * float(similarity)
-            rankvalue_list.append(rankvalue)
-##            print('i=',i,',','j=',j)
-##            print('rating:',ratingvalue)
-##            print('similarity:',similarity)
-##            print('rankvalue:',rankvalue)
-##            print('---------------------------------------------------------------------')
-            count += 1
+    for m in range(len(df_a)):
+        i = df_a['i'][m]
+        j = df_a['j'][m]
+        survey_track = df_a['survey_track'][m]
+        rec_track = df_a['rec_track'][m]
+        rankvalue_a = df_a['rankvalue'][m]
+        rankvalue_l = 1.0
+##        rankvalue_l = df_l['rankvalue'][m]
+        rankvalue =  float(rankvalue_a) * float(rankvalue_l)
+        rankvalue_list.append(rankvalue)
+        
+        Table = [[i,j,survey_track,rec_track,rankvalue_a,rankvalue_l,rankvalue]]
+        writer.writerows(Table)
 
-            Table = [[i,j,survey_track_name,rec_track,ratingvalue,similarity,rankvalue]]
-            writer.writerows(Table)
-         
-        rankvalue_list.sort(reverse = True)
-##        print(rankvalue_list)
-        rank_sort_value =  rankvalue_list[0]
-##        print(rank_sort_value)
+    print('===== CSV DONE =====')
+    
+    rankvalue_list.sort(reverse = True)
+##    print(rankvalue_list)
+    rank_sort_value =  rankvalue_list[0]
+##    print(rank_sort_value)
 
 #取推薦之20首歌曲
-table_df = pd.read_csv(filepath)
+table_df = pd.read_csv(filepath_h)
 ##print(table_df)
 table_df_sort = table_df.sort_values(by = "rankvalue", ascending=False) #ascending=False降序
 ##print(table_df_sort)
 print('前20高分歌曲：')
 print(table_df_sort.head(20))
 final_table = table_df_sort.iloc[0:20]
+print(final_table['rec_track'])
 print('---------------------------------------------------------------------')
 
 #去除重複推薦之歌曲
@@ -148,23 +90,6 @@ if len(final_table_new) < 20:
     final_table_insert.to_csv(filepath2)
 else:
     final_table.to_csv(filepath2)
-    
-##track_id = '001rKAr9siVsYzpSooZRF0'
-##gettop20_2 = "select a_top2 from tracks_audiolyricstop20 where id='{}'".format(track_id)
-##cursor.execute(gettop20_2)
-####print(data2)  # 返回為0或者1，1表示有資料，0表示無資料或失敗
-##rs2 = cursor.fetchall()
-##print(rs2)
-##for row in rs2:
-##    result = row[0]
-##    print('top20result:',result)
-
-##x1 = result.replace('[','').replace(']','')
-####print('x1',x1)
-##y1 = x1.split(',')
-####print(y1)
-##print('top20 trackid:',eval(y1[0])) #trackid
-##print('euc:',eval(y1[1])) #euc
 
 #取推薦歌曲ID
 ##print(final_table.iat[0,3])

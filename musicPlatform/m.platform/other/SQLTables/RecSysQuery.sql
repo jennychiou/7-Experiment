@@ -26,11 +26,11 @@ set @recom_rank = '1';
 set @score = '4';
 
 # 寫入資料表
-insert into tracks_recsysresults_a (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);
-select * from tracks_recsysresults_a;
+insert into tracks_recsysresults (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);
+select * from tracks_recsysresults;
 
 # 清除資料 
-delete from tracks_recsysresults_a where user_id = 'lintimken';
+delete from tracks_recsysresults where user_id = 'lintimken' and recom_method = '2';
 
 # 更新score欄位值
 UPDATE tracks_recsysresults_a SET score = '';

@@ -54,13 +54,13 @@
         <button  id="previous" type="button" class="btn btn-light" onclick="previous_song()" >Previous</button>
         <audio src="{{ album.0.preview_url}}" controls autoplay buffered volume id="player" data-content="0"></audio>   
         <!-- <audio src="{% static 'music/' %}{{ album.0.name}}.mp3" controls autoplay buffered volume id="player" data-content="0"></audio>    -->
-        <button id="next"  type="button" class="btn btn-light" onclick="next_song()">Ｎext</button>
+        <button id="next"  type="button" class="btn btn-light" onclick="next_song()">Next</button>
         <ul class="list-group list-group-flush playlist">
         <p type="hiddn" id="all_data" data-content="{{ album }}"></p>
             {% for track in album %}
                 {% if track.user == ''%}
                     <li  class="list-group-item" >
-                        <button type="button" class="btn btn-link absolute" onclick="save_playlist()" value="{{track.album_id}}:{{track.track_id}}">＋</button>
+                        <button type="button" class="btn btn-link absolute" onclick="save_playlist()" value="{{track.album_id}}:{{track.track_id}}">+</button>
                     <p onclick="change()" id="{{forloop.counter}}" data-content='{{forloop.counter}}' class="song_text" style="display: inline-block">{{ track.name }}</p>
                     </li>
                 {% else %}
@@ -167,7 +167,7 @@ function save_playlist(){
     var add_detail = {}
     add_detail['track'] = event.target.value;
     add_detail['user'] = document.getElementById('user_name').innerText;
-    if ($(event.target).text() === '＋') {
+    if ($(event.target).text() === '+') {
         xhr.open('POST', url= '/tracks/add');
         xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
         xhr.send(JSON.stringify(add_detail));
@@ -177,7 +177,7 @@ function save_playlist(){
         xhr.open('POST', url= '/tracks/remove');
         xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
         xhr.send(JSON.stringify(add_detail));
-        $(event.target).text('＋');
+        $(event.target).text('+');
     }
 }
 

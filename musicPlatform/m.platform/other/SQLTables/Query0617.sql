@@ -6,6 +6,7 @@ select * from auth_user;
 select * from tracks_album;
 select * from tracks_artist;
 select * from tracks_features;
+select * from tracks_lyrics;
 
 select * from tracks_audiolyricsembedding;
 select * from tracks_audiolyricstop20;
@@ -25,10 +26,10 @@ SELECT COUNT(*) FROM tracks_features;  # 計算資料筆數
 SELECT COUNT(*) FROM tracks_dataforrec;
 
 # 複製資料表
-CREATE TABLE tracks_recsysresults_h LIKE tracks_recsysresults_a;
+CREATE TABLE tracks_recsysresults LIKE tracks_recsysresults;
 -- INSERT tracks_recsysresults2 SELECT * FROM tracks_recsysresults_a;
 
 #DROP TABLE tracks_artist;
 #DROP TABLE tracks_features;
 #DROP TABLE tracks_survey20tracks;
-DROP TABLE tracks_recsysresults_l;
+#DROP TABLE tracks_recsysresults;
