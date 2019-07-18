@@ -79,7 +79,7 @@ survey_track = ['1au9q3wiWxIwXTazIjHdfF','1ExfPZEiahqhLyajhybFeS','1fLlRApgzxWwe
                 '5E5MqaS6eOsbaJibl3YeMZ','5uCax9HTNlzGybIStD3vDh','5WLSak7DN3LY1K71oWYuoN','6G7URf5rGe6MvNoiTtNEP7',
                 '6QPKYGnAW9QozVz2dSWqRg','6rUp7v3l8yC4TKxAAR5Bmx','7qjbpdk0IYijcSuSYWlXO6','7uRznL3LcuazKpwCTpDltz']
 
-df = pd.read_csv('temp/survry20tracks_sim_a_outputEUCcsv.csv')
+df = pd.read_csv('temp/survry20tracks_a_sim_outputEUCcsv.csv')
 count = 0
 rankvalue_list= []
 data_folder = "CSVTables/surveyresult/"
@@ -99,7 +99,7 @@ with open(filepath, "w", newline='') as csvfile:
             data_re = data.replace('[','').replace(']','').replace(' ','')
             data_sp = data_re.split(',')
             rec_track = data_sp[0].replace("'",'')
-            similarity = data_sp[1]
+            similarity = 1 - float(data_sp[1]) #EUC值越小越好
             ratingvalue = rating[i]
             rankvalue = ratingvalue * float(similarity)
             rankvalue_list.append(rankvalue)
@@ -169,6 +169,7 @@ else:
 #取推薦歌曲ID
 ##print(final_table.iat[0,3])
 ##print(final_table.iat[19,3])
+#data放入資料庫
 for m in range(20):
     if len(final_table_new) < 20:
         track_id = final_table_insert.iat[m,3]  # 有插入新列
@@ -182,7 +183,7 @@ for m in range(20):
     sql_4 = "set @album_id = (select album_id from tracks_features where id = @track_id)"
     sql_5 = "set @album_img_url = (select img_url from tracks_album where id = @album_id)"
     sql_6 = "set @artist_id = (select artist_id from tracks_features where id = @track_id)"
-    sql_7 = "set @artist_name = (select artist_name from tracks_artist where id = @artist_id)"
+    sql_7 = "set @artist_name = (select name from tracks_artist where id = @artist_id)"
     sql_8 = "set @recom_method = '{}'".format(recom_method)
     sql_9 = "set @recom_rank = '{}'".format(recom_rank)
     sql_10 = "set @score = ''"

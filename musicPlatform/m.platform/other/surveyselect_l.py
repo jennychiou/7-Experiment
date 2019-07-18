@@ -1,13 +1,14 @@
 import pymysql
 import csv
 import pandas as pd
+import random
 
 # 連接資料庫
 db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='850121', db='tracks')
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id = 'chiouchingyi'
+user_id = 'lintimken'
 getsurveyresult = "select results from tracks_surveyresults where user='{}'".format(user_id)
 data1 = cursor.execute(getsurveyresult)
 ##print(data1)  # 返回為0或者1，1表示有資料，0表示無資料或失敗
@@ -73,13 +74,13 @@ print('---------------------------------------------------------------------')
 recom_method = "1" #Lyrics
 ##recom_method = "2" #Hybrid
 
-survey_track = ['1au9q3wiWxIwXTazIjHdfF','1ExfPZEiahqhLyajhybFeS','1fLlRApgzxWweF1JTf8yM5','1pSIQWMFbkJ5XvwgzKfeBv',
-                '1UMJ5XcJPmH6ZbIRsCLY5F','2W2eaLVKv9NObcLXlYRZZo','3S0OXQeoh0w6AY8WQVckRW','3wF0zyjQ6FKLK4vFxcMojP',
-                '4FCb4CUbFCMNRkI6lYc1zI','4RL77hMWUq35NYnPLXBpih','52UWtKlYjZO3dHoRlWuz9S','5b88tNINg4Q4nrRbrCXUmg',
-                '5E5MqaS6eOsbaJibl3YeMZ','5uCax9HTNlzGybIStD3vDh','5WLSak7DN3LY1K71oWYuoN','6G7URf5rGe6MvNoiTtNEP7',
-                '6QPKYGnAW9QozVz2dSWqRg','6rUp7v3l8yC4TKxAAR5Bmx','7qjbpdk0IYijcSuSYWlXO6','7uRznL3LcuazKpwCTpDltz']
+survey_track = ['000xQL6tZNLJzIrtIgxqSl','00518PumkDdn560MsfLofT','009ImBOrIUlWgla8U05RAC','00AJ22EiTqG74qdgHVKVDM',
+                '00AlGnzeNVYmilww5OFUw8','00BnfL75e8vHSGCmwUWbEk','00bvlMH8B6w5kDWZjNa05M','00EQTISBxvGLzB36hiOYMd',
+                '00f9VGHfQhAHMCQ2bSjg3D','00GNc5ebF0onJaDp9Ey8bn','00J6muo7cpXzgQxLNIDC8O','00JA27dAnIPXljobCwtS36',
+                '00jXDm9BLNZdf2QC3Br0r7','00Mb3DuaIH1kjrwOku9CGU','00NAQYOP4AmWR549nnYJZu','00nKdBKPs0F7nJ0xzWbccg',
+                '00NtVG757yjm3hFVbuJX2Q','00RYw42tKwXecTaVay3BKl','00SbVevsdFCgVm4IrSbuVJ','00Tv62iZ42zDjrWYu8Rxjp']
 
-df = pd.read_csv('temp/survry20tracks_sim_l_outputEUCcsv.csv')
+df = pd.read_csv('temp/survry20tracks_l_sim_outputEUCcsv.csv')
 count = 0
 rankvalue_list= []
 data_folder = "CSVTables/surveyresult/"
@@ -99,7 +100,7 @@ with open(filepath, "w", newline='') as csvfile:
             data_re = data.replace('[','').replace(']','').replace(' ','')
             data_sp = data_re.split(',')
             rec_track = data_sp[0].replace("'",'')
-            similarity = data_sp[1]
+            similarity = 1 - float(data_sp[1]) /10#EUC值越小越好
             ratingvalue = rating[i]
             rankvalue = ratingvalue * float(similarity)
             rankvalue_list.append(rankvalue)
@@ -169,6 +170,7 @@ else:
 #取推薦歌曲ID
 ##print(final_table.iat[0,3])
 ##print(final_table.iat[19,3])
+#data放入資料庫
 for m in range(20):
     if len(final_table_new) < 20:
         track_id = final_table_insert.iat[m,3]  # 有插入新列
@@ -182,7 +184,7 @@ for m in range(20):
     sql_4 = "set @album_id = (select album_id from tracks_features where id = @track_id)"
     sql_5 = "set @album_img_url = (select img_url from tracks_album where id = @album_id)"
     sql_6 = "set @artist_id = (select artist_id from tracks_features where id = @track_id)"
-    sql_7 = "set @artist_name = (select artist_name from tracks_artist where id = @artist_id)"
+    sql_7 = "set @artist_name = (select name from tracks_artist where id = @artist_id)"
     sql_8 = "set @recom_method = '{}'".format(recom_method)
     sql_9 = "set @recom_rank = '{}'".format(recom_rank)
     sql_10 = "set @score = ''"

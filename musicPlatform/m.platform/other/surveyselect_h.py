@@ -7,7 +7,7 @@ db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='8
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id  ='lintimken'
+user_id  = 'lintimken'
 data_folder = "CSVTables/surveyresult/"
 filepath_a = data_folder + user_id + '_surveyresult_a' + '.csv'
 filepath_l = data_folder + user_id + '_surveyresult_l' + '.csv'
@@ -24,8 +24,9 @@ df_a = pd.read_csv(filepath_a)
 ##print(df_a['j'][20])
 ##print(df_a['survey_track'][20])
 ##print(df_a['rec_track'][20])
-##print(df_a['rankvalue'][20])
-##df_l = pd.read_csv(filepath_l)
+print(df_a['rankvalue'][20])
+
+df_l = pd.read_csv(filepath_l)
 
 ##推薦方法
 ##recom_method = "0" #Audio
@@ -44,8 +45,8 @@ with open(filepath_h, "w", newline='') as csvfile:
         survey_track = df_a['survey_track'][m]
         rec_track = df_a['rec_track'][m]
         rankvalue_a = df_a['rankvalue'][m]
-        rankvalue_l = 1.0
-##        rankvalue_l = df_l['rankvalue'][m]
+#加條件判斷ID是否有對應到
+        rankvalue_l = df_l['rankvalue'][m]
         rankvalue =  float(rankvalue_a) * float(rankvalue_l)
         rankvalue_list.append(rankvalue)
         
@@ -94,6 +95,7 @@ else:
 #取推薦歌曲ID
 ##print(final_table.iat[0,3])
 ##print(final_table.iat[19,3])
+#data放入資料庫
 for m in range(20):
     if len(final_table_new) < 20:
         track_id = final_table_insert.iat[m,3]  # 有插入新列
@@ -107,7 +109,7 @@ for m in range(20):
     sql_4 = "set @album_id = (select album_id from tracks_features where id = @track_id)"
     sql_5 = "set @album_img_url = (select img_url from tracks_album where id = @album_id)"
     sql_6 = "set @artist_id = (select artist_id from tracks_features where id = @track_id)"
-    sql_7 = "set @artist_name = (select artist_name from tracks_artist where id = @artist_id)"
+    sql_7 = "set @artist_name = (select name from tracks_artist where id = @artist_id)"
     sql_8 = "set @recom_method = '{}'".format(recom_method)
     sql_9 = "set @recom_rank = '{}'".format(recom_rank)
     sql_10 = "set @score = ''"
