@@ -8,7 +8,7 @@ db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='8
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id = 'lintimken'
+user_id = 'keri'
 getsurveyresult = "select results from tracks_surveyresults where user='{}'".format(user_id)
 data1 = cursor.execute(getsurveyresult)
 ##print(data1)  # 返回為0或者1，1表示有資料，0表示無資料或失敗
@@ -74,11 +74,11 @@ print('---------------------------------------------------------------------')
 recom_method = "1" #Lyrics
 ##recom_method = "2" #Hybrid
 
-survey_track = ['000xQL6tZNLJzIrtIgxqSl','00518PumkDdn560MsfLofT','009ImBOrIUlWgla8U05RAC','00AJ22EiTqG74qdgHVKVDM',
-                '00AlGnzeNVYmilww5OFUw8','00BnfL75e8vHSGCmwUWbEk','00bvlMH8B6w5kDWZjNa05M','00EQTISBxvGLzB36hiOYMd',
-                '00f9VGHfQhAHMCQ2bSjg3D','00GNc5ebF0onJaDp9Ey8bn','00J6muo7cpXzgQxLNIDC8O','00JA27dAnIPXljobCwtS36',
-                '00jXDm9BLNZdf2QC3Br0r7','00Mb3DuaIH1kjrwOku9CGU','00NAQYOP4AmWR549nnYJZu','00nKdBKPs0F7nJ0xzWbccg',
-                '00NtVG757yjm3hFVbuJX2Q','00RYw42tKwXecTaVay3BKl','00SbVevsdFCgVm4IrSbuVJ','00Tv62iZ42zDjrWYu8Rxjp']
+survey_track = ['1au9q3wiWxIwXTazIjHdfF','1ExfPZEiahqhLyajhybFeS','1fLlRApgzxWweF1JTf8yM5','1pSIQWMFbkJ5XvwgzKfeBv',
+                '1UMJ5XcJPmH6ZbIRsCLY5F','2W2eaLVKv9NObcLXlYRZZo','3S0OXQeoh0w6AY8WQVckRW','3wF0zyjQ6FKLK4vFxcMojP',
+                '4FCb4CUbFCMNRkI6lYc1zI','4RL77hMWUq35NYnPLXBpih','52UWtKlYjZO3dHoRlWuz9S','5b88tNINg4Q4nrRbrCXUmg',
+                '5E5MqaS6eOsbaJibl3YeMZ','5uCax9HTNlzGybIStD3vDh','5WLSak7DN3LY1K71oWYuoN','6G7URf5rGe6MvNoiTtNEP7',
+                '6QPKYGnAW9QozVz2dSWqRg','6rUp7v3l8yC4TKxAAR5Bmx','7qjbpdk0IYijcSuSYWlXO6','7uRznL3LcuazKpwCTpDltz']
 
 df = pd.read_csv('temp/survry20tracks_l_sim_outputEUCcsv.csv')
 count = 0
@@ -100,7 +100,7 @@ with open(filepath, "w", newline='') as csvfile:
             data_re = data.replace('[','').replace(']','').replace(' ','')
             data_sp = data_re.split(',')
             rec_track = data_sp[0].replace("'",'')
-            similarity = 1 - float(data_sp[1]) /10#EUC值越小越好
+            similarity = 1 - float(data_sp[1]) /10#EUC值越小越好 /10
             ratingvalue = rating[i]
             rankvalue = ratingvalue * float(similarity)
             rankvalue_list.append(rankvalue)
@@ -144,12 +144,16 @@ if len(final_table_new) < 20:
     print('差：',diff)
     insert = table_df_sort[20:20+diff]
     final_table_insert = final_table_new.append(insert)
+    print('---------------------------------------------------------------------')
+    print('最終推薦之歌曲：')
+    print(final_table_insert)
     print('列表長度：',len(final_table_insert))
-##    print(final_table_insert)
     final_table_insert.to_csv(filepath2)
 else:
     final_table.to_csv(filepath2)
-    
+    print('最終推薦之歌曲：')
+    print(final_table_new)
+
 ##track_id = '001rKAr9siVsYzpSooZRF0'
 ##gettop20_2 = "select a_top2 from tracks_audiolyricstop20 where id='{}'".format(track_id)
 ##cursor.execute(gettop20_2)
@@ -170,7 +174,7 @@ else:
 #取推薦歌曲ID
 ##print(final_table.iat[0,3])
 ##print(final_table.iat[19,3])
-#data放入資料庫
+##data放入資料庫
 for m in range(20):
     if len(final_table_new) < 20:
         track_id = final_table_insert.iat[m,3]  # 有插入新列

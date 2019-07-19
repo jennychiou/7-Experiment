@@ -7,7 +7,7 @@ db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='8
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id = 'lintimken'
+user_id = 'keri'
 getsurveyresult = "select results from tracks_surveyresults where user='{}'".format(user_id)
 data1 = cursor.execute(getsurveyresult)
 ##print(data1)  # 返回為0或者1，1表示有資料，0表示無資料或失敗
@@ -143,11 +143,15 @@ if len(final_table_new) < 20:
     print('差：',diff)
     insert = table_df_sort[20:20+diff]
     final_table_insert = final_table_new.append(insert)
+    print('---------------------------------------------------------------------')
+    print('最終推薦之歌曲：')
+    print(final_table_insert)
     print('列表長度：',len(final_table_insert))
-##    print(final_table_insert)
     final_table_insert.to_csv(filepath2)
 else:
     final_table.to_csv(filepath2)
+    print('最終推薦之歌曲：')
+    print(final_table_new)
     
 ##track_id = '001rKAr9siVsYzpSooZRF0'
 ##gettop20_2 = "select a_top2 from tracks_audiolyricstop20 where id='{}'".format(track_id)

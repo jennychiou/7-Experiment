@@ -7,7 +7,7 @@ db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='8
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id  = 'lintimken'
+user_id  = 'keri'
 data_folder = "CSVTables/surveyresult/"
 filepath_a = data_folder + user_id + '_surveyresult_a' + '.csv'
 filepath_l = data_folder + user_id + '_surveyresult_l' + '.csv'
@@ -24,7 +24,7 @@ df_a = pd.read_csv(filepath_a)
 ##print(df_a['j'][20])
 ##print(df_a['survey_track'][20])
 ##print(df_a['rec_track'][20])
-print(df_a['rankvalue'][20])
+##print(df_a['rankvalue'][20])
 
 df_l = pd.read_csv(filepath_l)
 
@@ -47,7 +47,7 @@ with open(filepath_h, "w", newline='') as csvfile:
         rankvalue_a = df_a['rankvalue'][m]
 #加條件判斷ID是否有對應到
         rankvalue_l = df_l['rankvalue'][m]
-        rankvalue =  float(rankvalue_a) * float(rankvalue_l)
+        rankvalue =  float(rankvalue_a) *0.5 + float(rankvalue_l)*0.5
         rankvalue_list.append(rankvalue)
         
         Table = [[i,j,survey_track,rec_track,rankvalue_a,rankvalue_l,rankvalue]]
@@ -91,7 +91,9 @@ if len(final_table_new) < 20:
     final_table_insert.to_csv(filepath2)
 else:
     final_table.to_csv(filepath2)
-
+    print('最終推薦之歌曲：')
+    print(final_table_new)
+    
 #取推薦歌曲ID
 ##print(final_table.iat[0,3])
 ##print(final_table.iat[19,3])
