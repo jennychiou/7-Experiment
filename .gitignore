@@ -5,3 +5,8 @@ wavenet-ckpt/wavenet-ckpt/model.ckpt-200000.meta
 音樂/covers80.tgz
 wavenet_embedding-master/wavenet-ckpt/wavenet-ckpt/model.ckpt-200000.data-00000-of-00001
 RL/Q Learning_0627.ipynb
+歌詞/lyrics_data/tf_20000 (1)_0715.csv
+歌詞/lyrics_data/tf_20000 (1)_0715_v.csv
+歌詞/lyrics_data/tf_20000 (1)_0717.csv
+歌詞/lyrics_data/tf_20000 (1)_0717_v01.csv
+*.csv
