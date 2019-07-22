@@ -8,7 +8,7 @@ db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='8
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id = 'keri'
+user_id = 'chiouzihling'
 getsurveyresult = "select results from tracks_surveyresults where user='{}'".format(user_id)
 data1 = cursor.execute(getsurveyresult)
 ##print(data1)  # 返回為0或者1，1表示有資料，0表示無資料或失敗
@@ -100,7 +100,7 @@ with open(filepath, "w", newline='') as csvfile:
             data_re = data.replace('[','').replace(']','').replace(' ','')
             data_sp = data_re.split(',')
             rec_track = data_sp[0].replace("'",'')
-            similarity = 1 - float(data_sp[1]) /10#EUC值越小越好 /10
+            similarity = 1 - float(data_sp[1])/10 #EUC值越小越好 /10
             ratingvalue = rating[i]
             rankvalue = ratingvalue * float(similarity)
             rankvalue_list.append(rankvalue)

@@ -27,10 +27,16 @@ set @score = '4';
 
 # 寫入資料表
 insert into tracks_recsysresults (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);
-select * from tracks_recsysresults;
 
 # 清除資料 
-delete from tracks_recsysresults where user_id = 'lintimken' and recom_method = '2';
+delete from tracks_recsysresults where user_id = 'chiouzihling' and recom_method = 1;
+
+# 推薦結果 / 計算資料筆數
+select * from tracks_recsysresults;
+SELECT COUNT(*) FROM tracks_recsysresults;
+
+#啟動編輯模式
+set SQL_SAFE_UPDATES = 0;
 
 # 更新score欄位值
-UPDATE tracks_recsysresults_a SET score = '';
+UPDATE tracks_recsysresults SET score = '5' where user_id = 'chiouchingyi' and recom_method = 0 and recom_rank = 10;
