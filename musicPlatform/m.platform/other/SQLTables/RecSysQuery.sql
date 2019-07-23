@@ -39,4 +39,4 @@ SELECT COUNT(*) FROM tracks_recsysresults;
 set SQL_SAFE_UPDATES = 0;
 
 # 更新score欄位值
-UPDATE tracks_recsysresults SET score = '5' where user_id = 'chiouchingyi' and recom_method = 0 and recom_rank = 10;
+UPDATE tracks_recsysresults SET score = '5' where user_id = 'alex' and recom_method = 2 and recom_rank = 18;

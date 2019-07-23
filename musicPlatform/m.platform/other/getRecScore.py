@@ -9,7 +9,7 @@ print("Opened database successfully")
 
 #user_L = ['chiouchingyi','lintimken','bibicall','jacky','keri','vivian','chiouzihling']
 #user_id = 'chiouchingyi'
-user_L = ['chiouchingyi','lintimken']
+user_L = ['chiouchingyi','lintimken','jacky','keri','vivian','chiouzihling','alex']
 recom_method = '2'
 
 final_L = []
