@@ -1,14 +1,14 @@
 import pymysql
 import csv
 import pandas as pd
-import random
 
 # 連接資料庫
 db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='850121', db='tracks')
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id = 'nicole'
+#連接MongoDB抓播放紀錄
+user_id = 'chiouchingyi'
 getsurveyresult = "select results from tracks_surveyresults where user='{}'".format(user_id)
 data1 = cursor.execute(getsurveyresult)
 ##print(data1)  # 返回為0或者1，1表示有資料，0表示無資料或失敗
@@ -70,8 +70,8 @@ if count == 0:
 print('---------------------------------------------------------------------')
 
 ##推薦方法
-##recom_method = "0" #Audio
-recom_method = "1" #Lyrics
+recom_method = "0" #Audio
+##recom_method = "1" #Lyrics
 ##recom_method = "2" #Hybrid
 
 survey_track = ['1au9q3wiWxIwXTazIjHdfF','1ExfPZEiahqhLyajhybFeS','1fLlRApgzxWweF1JTf8yM5','1pSIQWMFbkJ5XvwgzKfeBv',
@@ -80,11 +80,11 @@ survey_track = ['1au9q3wiWxIwXTazIjHdfF','1ExfPZEiahqhLyajhybFeS','1fLlRApgzxWwe
                 '5E5MqaS6eOsbaJibl3YeMZ','5uCax9HTNlzGybIStD3vDh','5WLSak7DN3LY1K71oWYuoN','6G7URf5rGe6MvNoiTtNEP7',
                 '6QPKYGnAW9QozVz2dSWqRg','6rUp7v3l8yC4TKxAAR5Bmx','7qjbpdk0IYijcSuSYWlXO6','7uRznL3LcuazKpwCTpDltz']
 
-df = pd.read_csv('temp/survry20tracks_l_sim_outputEUCcsv.csv')
+df = pd.read_csv('temp/survry20tracks_a_sim_outputEUCcsv.csv')
 count = 0
 rankvalue_list= []
 data_folder = "CSVTables/surveyresult/"
-filepath = data_folder + user_id + '_surveyresult_l' + '.csv'
+filepath = data_folder + user_id + '_surveyresult_a' + '.csv'
 print('路徑：',filepath)
 
 with open(filepath, "w", newline='') as csvfile:
@@ -100,7 +100,7 @@ with open(filepath, "w", newline='') as csvfile:
             data_re = data.replace('[','').replace(']','').replace(' ','')
             data_sp = data_re.split(',')
             rec_track = data_sp[0].replace("'",'')
-            similarity = 1 - float(data_sp[1])/10 #EUC值越小越好 /10
+            similarity = 1 - float(data_sp[1]) #EUC值越小越好
             ratingvalue = rating[i]
             rankvalue = ratingvalue * float(similarity)
             rankvalue_list.append(rankvalue)
@@ -138,7 +138,7 @@ print('去除重複推薦之歌曲：')
 print(final_table_new)
 print('列表長度：',len(final_table_new))
 print('---------------------------------------------------------------------')
-filepath2 = data_folder + user_id + '_surveyresult_l_new' + '.csv'
+filepath2 = data_folder + user_id + '_surveyresult_a_new' + '.csv'
 if len(final_table_new) < 20:
     diff = 20 - len(final_table_new)
     print('差：',diff)
@@ -153,7 +153,7 @@ else:
     final_table.to_csv(filepath2)
     print('最終推薦之歌曲：')
     print(final_table_new)
-
+    
 ##track_id = '001rKAr9siVsYzpSooZRF0'
 ##gettop20_2 = "select a_top2 from tracks_audiolyricstop20 where id='{}'".format(track_id)
 ##cursor.execute(gettop20_2)
@@ -174,45 +174,45 @@ else:
 #取推薦歌曲ID
 ##print(final_table.iat[0,3])
 ##print(final_table.iat[19,3])
-##data放入資料庫
-for m in range(20):
-    if len(final_table_new) < 20:
-        track_id = final_table_insert.iat[m,3]  # 有插入新列
-    else:
-        track_id = final_table_new.iat[m,3]   # 沒插入新列
-    recom_rank = m + 1
-
-    sql_1 = "set SQL_SAFE_UPDATES = 0"
-    sql_2 = "set @user_id = (select user from tracks_surveyresults where user = '{}')".format(user_id)
-    sql_3 = "set @track_id = '{}'".format(track_id)
-    sql_4 = "set @album_id = (select album_id from tracks_features where id = @track_id)"
-    sql_5 = "set @album_img_url = (select img_url from tracks_album where id = @album_id)"
-    sql_6 = "set @artist_id = (select artist_id from tracks_features where id = @track_id)"
-    sql_7 = "set @artist_name = (select name from tracks_artist where id = @artist_id)"
-    sql_8 = "set @recom_method = '{}'".format(recom_method)
-    sql_9 = "set @recom_rank = '{}'".format(recom_rank)
-    sql_10 = "set @score = ''"
-    sql_11 = "insert into tracks_recsysresults (user_id, album_img_url, track_id, artist_name, recom_method, recom_rank, score) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_method, @recom_rank, @score);"
-
-    try:
-        cursor.execute(sql_1) 
-        cursor.execute(sql_2) 
-        cursor.execute(sql_3)
-        cursor.execute(sql_4) 
-        cursor.execute(sql_5)
-        cursor.execute(sql_6) 
-        cursor.execute(sql_7) 
-        cursor.execute(sql_8)
-        cursor.execute(sql_9)
-        cursor.execute(sql_10) 
-        cursor.execute(sql_11)
-        
-    except Exception as e:
-        db.rollback()
-        print('處理失敗:', e)
-    else:
-        db.commit()
-        print(m+1, '--', '處理成功:', cursor.rowcount)
+#data放入資料庫
+##for m in range(20):
+##    if len(final_table_new) < 20:
+##        track_id = final_table_insert.iat[m,3]  # 有插入新列
+##    else:
+##        track_id = final_table_new.iat[m,3]   # 沒插入新列
+##    recom_rank = m + 1
+##
+##    sql_1 = "set SQL_SAFE_UPDATES = 0"
+##    sql_2 = "set @user_id = (select user from tracks_surveyresults where user = '{}')".format(user_id)
+##    sql_3 = "set @track_id = '{}'".format(track_id)
+##    sql_4 = "set @album_id = (select album_id from tracks_features where id = @track_id)"
+##    sql_5 = "set @album_img_url = (select img_url from tracks_album where id = @album_id)"
+##    sql_6 = "set @artist_id = (select artist_id from tracks_features where id = @track_id)"
+##    sql_7 = "set @artist_name = (select name from tracks_artist where id = @artist_id)"
+##    sql_8 = "set @recom_rank = '{}'".format(recom_rank)
+##    sql_9 = "set @score = ''"
+##    sql_10 = "set @number_of_rec_times = ''"
+##    sql_11 = "insert into tracks_recfromrlresults (user_id, album_img_url, track_id, artist_name, recom_rank, score, number_of_rec_times) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_rank, @score, @number_of_rec_times);"
+##
+##    try:
+##        cursor.execute(sql_1) 
+##        cursor.execute(sql_2) 
+##        cursor.execute(sql_3)
+##        cursor.execute(sql_4) 
+##        cursor.execute(sql_5)
+##        cursor.execute(sql_6) 
+##        cursor.execute(sql_7) 
+##        cursor.execute(sql_8)
+##        cursor.execute(sql_9)
+##        cursor.execute(sql_10) 
+##        cursor.execute(sql_11)
+##        
+##    except Exception as e:
+##        db.rollback()
+##        print('處理失敗:', e)
+##    else:
+##        db.commit()
+##        print(m+1, '--', '處理成功:', cursor.rowcount)
 
     # 關閉連接
 ##    cursor.close()

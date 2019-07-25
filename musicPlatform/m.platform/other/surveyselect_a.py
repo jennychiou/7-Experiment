@@ -7,7 +7,7 @@ db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='8
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id = 'michael'
+user_id = 'nicole'
 getsurveyresult = "select results from tracks_surveyresults where user='{}'".format(user_id)
 data1 = cursor.execute(getsurveyresult)
 ##print(data1)  # 返回為0或者1，1表示有資料，0表示無資料或失敗

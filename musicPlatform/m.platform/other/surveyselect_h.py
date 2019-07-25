@@ -7,7 +7,7 @@ db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='8
 cursor = db.cursor()
 print("Opened database successfully")
 
-user_id  = 'michael'
+user_id  = 'nicole'
 data_folder = "CSVTables/surveyresult/"
 filepath_a = data_folder + user_id + '_surveyresult_a' + '.csv'
 filepath_l = data_folder + user_id + '_surveyresult_l' + '.csv'
