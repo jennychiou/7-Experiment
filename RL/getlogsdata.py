@@ -17,16 +17,16 @@ collection = db["logs"]
 ##print(cursor)
 
 #用戶資訊
-user = 'test'
-filenum = 1
+user_id = 'chiouchingyi'
+filenum = 2
 data_folder = 'data/input/'
-filename = 'record_0' + str(filenum) + '.csv'
-filepath = data_folder + user + '/' + str(filenum) + '/' + filename
+filename = user_id + '_record_0' + str(filenum) + '.csv'
+filepath = data_folder + user_id + '/' + str(filenum) + '/' + filename
 print('輸出播放紀錄data: ',filepath)
 
 #根據指定條件查詢
 #http://www.runoob.com/python3/python-mongodb-query-document.html
-myquery = { "user": user}
+myquery = { "user": user_id}
 mydoc = collection.find(myquery)
 
 user_id_L = []
@@ -50,12 +50,12 @@ for x in mydoc:
 
 #播放紀錄建立dataframe
 df = pd.DataFrame(list(zip(user_id_L,track_id_L,track_name_L,time_L)), columns =['user_id','track_id','track_name','time'])
-print(df)
+##print(df)
 
 print('根據時間排序：')
 ##df['time'] = pd.to_datetime(df['time'])
 df2 = df.sort_values(by = 'time', ascending=False)
-print(df2)
+##print(df2)
 
 #取前20筆資料
 print(df2.head(20))
@@ -79,10 +79,10 @@ for v in range(len(df2)-1,-1,-1):
     return3_L.append(return3)
     return4_L.append(return4)
 
-print(return1_L)
-print(return2_L)
-print(return3_L)
-print(return4_L)
+##print(return1_L)
+##print(return2_L)
+##print(return3_L)
+##print(return4_L)
 
 #回傳資料筆數
 select_count = collection.count_documents(myquery)
@@ -97,7 +97,7 @@ print('資料筆數：',select_count)
 with open(filepath, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['user_id','track_id','track_name','time'])
-    for m in range(0,len(return1_L)):
+    for m in range(0,20): #(0,20)時間最近的20筆資料
         a = return1_L[m]
         b = return2_L[m]
         c = return3_L[m]
@@ -105,4 +105,3 @@ with open(filepath, 'w', newline='') as csvfile:
         
         Table = [[a,b,c,d]]
         writer.writerows(Table)
-    

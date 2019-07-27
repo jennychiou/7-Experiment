@@ -1,12 +1,17 @@
-import pymysqls
+import pymysql
 import csv
 import pandas as pd
 
+# 連接資料庫
+db = pymysql.connect(host='127.0.0.1', port=3306, user='chiouchingyi', passwd='850121', db='tracks')
+cursor = db.cursor()
+print("Opened database successfully")
+
 #先建立好第_次推薦的資料夾，更改user_id、num
-user_id = 'chiouchingyi'
-num = 3
+user_id = 'nicole'
+num = 20
 data_folder = 'data/output/'
-filename = 'record_output_0' + str(num) + '.csv'
+filename = user_id + '_record_output_0' + str(num) + '.csv'
 filepath = data_folder + user_id + '/' + str(num) + '/' + filename
 print('輸入data: ',filepath)
 
@@ -21,7 +26,7 @@ for i in range(0,len(df)):
     track_L.append(track)
 print('喜歡的tracks: ',track_L)
 
-filename2 = 'record_output_p_0' + str(num) + '.csv'
+filename2 = user_id +'_record_output_p_0' + str(num) + '.csv'
 filepath2 = data_folder + user_id + '/' + str(num) + '/' + filename2
 print('聽大於28秒的歌曲data: ',filepath2)
 
@@ -62,7 +67,7 @@ select_df = pd.read_csv(filepath2)
 ##print(select_df.head())
 
 #排序sort相似性的值
-filename3 = 'record_output_s_0' + str(num) + '.csv'
+filename3 = user_id + '_record_output_s_0' + str(num) + '.csv'
 filepath3 = data_folder + user_id + '/' + str(num) + '/' + filename3
 print('相似性排序後的data: ',filepath3)
 
@@ -104,7 +109,7 @@ print('列表長度：',len(final_table_new))
 print('---------------------------------------------------------------------')
 
 #匯出最終推薦之CSV
-filename4 = 'record_output_f_0' + str(num) + '.csv'
+filename4 = user_id + '_record_output_f_0' + str(num) + '.csv'
 filepath4 = data_folder + user_id + '/' + str(num) + '/' + filename4
 print('最終推薦data: ',filepath4)
 
@@ -122,3 +127,49 @@ else:
     final_table.to_csv(filepath4)
     print('最終推薦之歌曲：')
     print(final_table_new)
+
+print('------',num,'------')
+
+#data放入資料庫
+for m in range(20):
+    if len(final_table_new) < 20:
+        track_id = final_table_insert.iat[m,0]  # 有插入新列
+    else:
+        track_id = final_table_new.iat[m,0]   # 沒插入新列
+    recom_rank = m + 1
+
+    sql_1 = "set SQL_SAFE_UPDATES = 0"
+    sql_2 = "set @user_id = '{}'".format(user_id)
+    sql_3 = "set @track_id = '{}'".format(track_id)
+    sql_4 = "set @album_id = (select album_id from tracks_features where id = @track_id)"
+    sql_5 = "set @album_img_url = (select img_url from tracks_album where id = @album_id)"
+    sql_6 = "set @artist_id = (select artist_id from tracks_features where id = @track_id)"
+    sql_7 = "set @artist_name = (select name from tracks_artist where id = @artist_id)"
+    sql_8 = "set @recom_rank = '{}'".format(recom_rank)
+    sql_9 = "set @score = ''"
+    sql_10 = "set @number_of_rec_times = '{}'".format(num)
+    sql_11 = "insert into tracks_recfromrlresults (user_id, album_img_url, track_id, artist_name, recom_rank, score, number_of_rec_times) values (@user_id, @album_img_url, @track_id, @artist_name, @recom_rank, @score, @number_of_rec_times);"
+
+    try:
+        cursor.execute(sql_1) 
+        cursor.execute(sql_2) 
+        cursor.execute(sql_3)
+        cursor.execute(sql_4) 
+        cursor.execute(sql_5)
+        cursor.execute(sql_6) 
+        cursor.execute(sql_7) 
+        cursor.execute(sql_8)
+        cursor.execute(sql_9)
+        cursor.execute(sql_10) 
+        cursor.execute(sql_11)
+        
+    except Exception as e:
+        db.rollback()
+        print('處理失敗:', e)
+    else:
+        db.commit()
+        print(m+1, '--', '處理成功:', cursor.rowcount)
+
+    # 關閉連接
+##    cursor.close()
+##    db.close()
