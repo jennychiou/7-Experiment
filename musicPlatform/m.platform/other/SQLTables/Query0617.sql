@@ -18,9 +18,8 @@ select * from tracks_surveyresults;
 select * from tracks_usersurveycompleted;
 select * from tracks_dataforrec;
 
-select * from tracks_recsysresults;  # 音頻推薦
--- select * from tracks_recsysresults2;
--- select * from tracks_recfromrlresults;
+select * from tracks_recsysresults;  # content-based推薦
+select * from tracks_recfromrlresults; # RL推薦
 
 SELECT COUNT(*) FROM tracks_recsysresults;  # 計算資料筆數
 SELECT COUNT(*) FROM tracks_dataforrec;

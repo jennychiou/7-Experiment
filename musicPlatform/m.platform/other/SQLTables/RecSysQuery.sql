@@ -30,13 +30,19 @@ insert into tracks_recsysresults (user_id, album_img_url, track_id, artist_name,
 
 # 清除資料 
 delete from tracks_recsysresults where user_id = 'chiouzihling' and recom_method = 1;
+delete from tracks_recfromrlresults where user_id = 'vivian' and number_of_rec_times = 10;
 
 # 推薦結果 / 計算資料筆數
 select * from tracks_recsysresults;
 SELECT COUNT(*) FROM tracks_recsysresults;
 
+select * from tracks_recfromrlresults; # RL推薦
+SELECT COUNT(*) FROM tracks_recfromrlresults;
+
 #啟動編輯模式
 set SQL_SAFE_UPDATES = 0;
 
 # 更新score欄位值
-UPDATE tracks_recsysresults SET score = '5' where user_id = 'alex' and recom_method = 2 and recom_rank = 18;
+UPDATE tracks_recsysresults SET score = '5' where user_id = 'smallhsu' and recom_method = 2 and recom_rank = 2;
+UPDATE tracks_recfromrlresults SET number_of_rec_times = 1 where user_id = 'chiouchingyi' and recom_rank = 20;
+UPDATE tracks_recfromrlresults SET score = '1' where user_id = 'alex' and track_id = '1lPaNFyURi7x5McVUZrlzI' and number_of_rec_times = 18; #更改後另一個帳號可顯示
