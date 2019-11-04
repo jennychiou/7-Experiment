@@ -4,7 +4,7 @@ from mido import MidiFile
 from mido import MetaMessage
 from mido import tempo2bpm
 
-mid = MidiFile('MIDI/MIDI - twinkle_twinkle.mid')
+mid = MidiFile('MIDI/MIDI - Beauty_and_the_Beast.mid')
 print('MIDI檔案資訊：',mid,'\n')
 
 print('MIDI長度：',mid.length,'\n')
@@ -25,22 +25,33 @@ for i, track2 in enumerate(mid.tracks):
     print('Track {}: {}'.format(i, track2.name))
     print('track2 : ',track2)
     
+##    if i == 0:
+##        for msg in track2:
+##            print(msg)
+##            count += 1
+##            if msg.type=="set_tempo":
+##                print("tempo:",tempo2bpm(msg.tempo))             
+    
     if i == 0:
         for msg in track2:
-            print(msg)
-            count += 1
             if msg.type=="set_tempo":
-                print("tempo:",tempo2bpm(msg.tempo))
-                
-    if i == 1:
-        for msg in track2:
+                    print("tempo:",tempo2bpm(msg.tempo))
+                    print()
+           
             if msg.type == 'note_on' or msg.type == 'note_off':
-                print(msg)
-                time = msg.time
-                bytes_list = msg.bytes()
-                bytes_list.append(time)
-                print(bytes_list)
-            count += 1
-       
+                velocity = msg.velocity
+                if velocity != 0:
+##                    print(msg) # note_on channel=__ note=__ velocity=__ time=__
+                    time = msg.time
+                    bytes_list = msg.bytes()
+                    bytes_list.append(time)
+##                    print(bytes_list) # [__, __, __, __]
+                    if time < 99:
+                        print(msg,'    |   ',bytes_list)
+                    elif 99 <time < 1000:
+                        print(msg,'  |   ',bytes_list)
+                    elif time > 1000:
+                        print(msg,'|   ',bytes_list)
+                    count += 1      
     print()
 print(count)
