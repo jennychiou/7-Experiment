@@ -1,0 +1,5 @@
+note=60,time=256
+note=64,time=512
+note=67,time=256
+note=67,time=256
+note=60,time=128

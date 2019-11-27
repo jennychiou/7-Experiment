@@ -1,0 +1,3 @@
+[submodule "nn_midi_trainer/pyPlayMusic"]
+	path = nn_midi_trainer/pyPlayMusic
+	url = https://github.com/davinnovation/pyPlayMusic.git
