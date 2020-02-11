@@ -1,0 +1,9 @@
+{
+	"output" : "D:/Anaconda3/Scripts/7 實驗進度/Spotify_yt/spotify-dl-output"
+	, "verbose" : "true"
+	, "skip_mp3" : "t"
+	, "YOUTUBE_DEV_KEY" : "AIzaSyBECxTmqkeovUJy3quL2c1ysPp1J50CJyQ"
+	, "SPOTIPY_CLIENT_ID" : "1a23ed1ca359485ab81d524206dba0f6"
+	, "SPOTIPY_CLIENT_SECRET" : "af0e14fdb19a49dfb19ef0c1ea1d42ea"
+	, "SPOTIPY_REDIRECT_URI" : "http://localhost/"
+}

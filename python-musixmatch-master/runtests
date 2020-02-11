@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pipenv run python tests/tests.py
+pipenv run python tests/test_utils.py

@@ -1,0 +1,12 @@
+__pycache__/
+.idea/
+spotify-dl/.cache-
+spotify-dl/.cache-sathyabhat
+spotify_dl.egg-info/
+.cache-
+spotify_dl/.cache-sathyabhat
+build/
+dist/
+downloaded_songs.txt
+songs.txt
+unins

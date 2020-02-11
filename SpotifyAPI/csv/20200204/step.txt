@@ -1,0 +1,8 @@
+0_df_cloudmusic：原始網易雲歌手清單
+1_df_cloudmusic：歌手清單按照字母大小排序
+2_df_cloudmusic：歌手清單加上spotify的歌手ID
+3_df_cloudmusic：刪除重複的歌手(大小寫問題沒清除乾淨的、刪除歌手不存在者)
+3_df_cloudmusic_1：調整特殊符號，如法文字元等
+
+◆ 要儲存法文字元必須先存成.xlsx檔案格式再另存成.csv檔案格式。
+◆ 讀取特殊字元使用read_excel (https://medium.com/@deeptibhatia/how-to-read-utf-8-characters-using-pandas-in-python-machine-learning-course-by-hackveda-88812b1433a1)
