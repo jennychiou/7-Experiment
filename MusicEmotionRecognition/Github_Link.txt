@@ -1,0 +1,15 @@
+danz1ka19/Music-Emotion-Recognition
+https://github.com/danz1ka19/Music-Emotion-Recognition
+https://github.com/Lisalotte/MusicEmotionRecognition
+
+[錯誤]
+AttributeError: module 'librosa.feature' has no attribute 'rmse'
+[解決]
+librosa.feature.rmse改成librosa.feature.rms
+https://stackoverflow.com/questions/59027941/sound-feature-attributeerror-rmse
+
+[錯誤]
+ModuleNotFoundError: No module named 'sklearn.cross_validation'
+[解決]
+from sklearn.model_selection import train_test_split改成from sklearn.model_selection import train_test_split
+https://stackoverflow.com/questions/30667525/importerror-no-module-named-sklearn-cross-validation
