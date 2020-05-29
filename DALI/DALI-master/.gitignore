@@ -1,0 +1,10 @@
+.DS_Store
+*.pyc
+/code/DALI/cross-correlation.py
+/code/DALI/my_helper.py
+/code/DALI/ground_truth.py
+/code/DALI/exp_alginment.py
+/code/DALI/get_audio.py
+/code/DALI/melody.py
+/images/graphs.key
+Icon?
