@@ -1,0 +1,1 @@
+{"bos_token": "<|endoftext|>", "eos_token": "<|endoftext|>", "unk_token": "<|endoftext|>", "additional_special_tokens": ["[s:genre]", "[s:artist]", "[s:year]", "[s:album]", "[s:song_name]", "[s:lyrics]", "[e:genre]", "[e:artist]", "[e:year]", "[e:album]", "[e:song_name]", "[e:lyrics]"]}
