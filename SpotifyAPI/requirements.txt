@@ -54,7 +54,7 @@ gym-gridworlds==0.0.2
 h5py==2.7.1
 hanziconv==0.3.2
 html5lib==1.0.1
-httplib2==0.12.3
+httplib2==0.19.0
 hyperlink==17.3.1
 idna==2.6
 idna-ssl==1.1.0
