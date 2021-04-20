@@ -120,7 +120,7 @@ pretty-midi==0.2.8
 promise==2.2.1
 prompt-toolkit==1.0.15
 protobuf==3.5.1
-py==1.5.3
+py==1.10.0
 py-midi==2.0.1
 pyasn1==0.4.5
 pyasn1-modules==0.2.5
