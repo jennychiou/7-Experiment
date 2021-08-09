@@ -150,7 +150,7 @@ python-speech-features==0.6
 pytube==9.3.5
 pytz==2017.3
 PyWavelets==0.5.2
-pywin32==224
+pywin32==301
 pywinpty==0.5.1
 PyYAML==3.12
 pyzmq==16.0.3
