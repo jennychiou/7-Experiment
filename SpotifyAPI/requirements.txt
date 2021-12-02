@@ -202,7 +202,7 @@ wcwidth==0.1.7
 webencodings==0.5.1
 Werkzeug==0.13
 widgetsnbextension==3.0.8
-wiki==0.5
+wiki==0.7.9
 yarl==1.4.2
 youtube-dl==2020.1.15
 zope.interface==4.4.3
