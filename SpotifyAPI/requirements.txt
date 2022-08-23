@@ -96,7 +96,7 @@ multidict==4.7.4
 music21==5.1.0
 mutagen==1.43.0
 myMath==1.0.1
-nbconvert==5.3.1
+nbconvert==6.5.1
 nbformat==4.4.0
 networkx==1.8.1
 nltk==3.3
